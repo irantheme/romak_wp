@@ -1,0 +1,47 @@
+.gallery {
+  margin: 0 auto !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-item {
+    margin: 0 !important;
+    text-align: center;
+    height: 20rem;
+    width: 49% !important;
+
+  }
+  
+  &-icon {
+    height: 100%;
+    padding: 1% 0 !important;
+
+    a {
+      height: 100%;
+    }
+  }
+
+  img {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    height: inherit;
+    object-fit: cover;
+  }
+
+  &-gallery-caption {
+    color: $color-gray-700;
+    font-size: 0.8rem;
+    margin: 0 0 0.5rem;
+  }
+
+  dl, dt {
+    margin: 0;
+  }
+
+  br+br {
+    display: none;
+  }
+}

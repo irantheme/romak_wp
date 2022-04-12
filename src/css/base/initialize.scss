@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 13pt;
+
+  @media screen and (max-width: 992px) {
+    & {
+      font-size: 11pt;
+    }
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $color-dark;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $color-gray-700;
+  }
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+body {
+  background: $color-white;
+  color: $color-dark;
+  font-family: $font-family-pack;
+  font-size: 1rem;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  line-height: 1.6rem;
+}
+
+.tooltip {
+  font-family: $font-family-pack;
+}

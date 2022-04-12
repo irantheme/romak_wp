@@ -1,0 +1,36 @@
+// Transition
+@mixin transition($ele, $time, $style:ease-in-out) {
+  -webkit-transition: $ele $time $style;
+  -moz-transition: $ele $time $style;
+  -ms-transition: $ele $time $style;
+  -o-transition: $ele $time $style;
+  transition: $ele $time $style;
+}
+
+// Transform
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+// Box shadow
+@mixin box-shadow($x:0, $y:0, $blur:10, $spread:0, $color:$color-gray-500, $inset:false) {
+  @if $inset==true {
+    -webkit-box-shadow: 'inset', $x, $y, $blur, $spread, $color;
+    -moz-box-shadow: 'inset', $x, $y, $blur, $spread, $color;
+    -ms-box-shadow: 'inset', $x, $y, $blur, $spread, $color;
+    -o-box-shadow: 'inset', $x, $y, $blur, $spread, $color;
+    box-shadow: 'inset', $x, $y, $blur, $spread, $color;
+  }
+
+  @else {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    -ms-box-shadow: $x $y $blur $spread $color;
+    -o-box-shadow: $x $y $blur $spread $color;
+    box-shadow: $x $y $blur $spread $color;
+  }
+}

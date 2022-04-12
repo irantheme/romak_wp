@@ -1,0 +1,64 @@
+/*
+=====================================
+Spinner
+=====================================
+*/
+
+.animate-rotate {
+  -webkit-animation-name: spinner;
+  animation-name: spinner;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*
+=====================================
+Left to right
+=====================================
+*/
+
+%animation-left-to-right {
+  animation-name: leftToRight;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes leftToRight {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-0.25rem);
+  }
+}

@@ -1,0 +1,35 @@
+// Color variables
+$color-primary: #0088cc;
+$color-secondary: #006da4;
+$color-white: #fff;
+$color-white-transparent: rgba(255, 255, 255, 0.8);
+$color-white-transparent-low: rgba(255, 255, 255, 0.2);
+$color-white-transparent-low-fill: rgba(255, 255, 255, 0.4);
+$color-gray: #6c757d;
+$color-gray-dark: #343a40;
+$color-gray-100: #f8f9fa;
+$color-gray-100-transparent: rgba(248, 249, 250, 0.5);
+$color-gray-100-transparent-hight: rgba(248, 249, 250, 0.75);
+$color-gray-200: #e9ecef;
+$color-gray-300: #dee2e6;
+$color-gray-400: #ced4da;
+$color-gray-500: #adb5bd;
+$color-gray-600: #6c757d;
+$color-gray-700: #495057;
+$color-gray-700-transparent: rgba(73, 80, 87, 0.5);
+$color-gray-800: #343a40;
+$color-gray-900: #212529;
+$color-dark: #1C2023;
+$color-darker: #000000;
+$color-dark-transparent: rgba(33, 33, 33, 0.85);
+$color-dark-transparent-low: rgba(33, 33, 33, 0.65);
+$color-dark-transparent-little: rgba(33, 33, 33, 0.35);
+
+// Fonts variables
+$font-family-primary: 'IRANSans';
+$font-family-secondary: 'iranyekan';
+$font-family-ternary: sans-serif;
+$font-family-icons: 'LineIcons';
+$font-family-pack: $font-family-primary,
+$font-family-secondary,
+$font-family-ternary;

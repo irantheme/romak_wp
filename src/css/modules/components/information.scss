@@ -1,0 +1,47 @@
+/*
+=====================================
+Information
+=====================================
+*/
+
+#information {
+  padding: 1rem;
+  background: $color-dark;
+  overflow: hidden;
+
+  .info-item {
+    display: flex;
+    /* justify-content: center; */
+    padding: 1.5rem 0;
+
+    & i {
+      font-size: 2.5rem;
+      color: $color-primary;
+    }
+
+    &>div {
+      margin-right: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      cite {
+        font-size: 0.8rem;
+        color: $color-white;
+        margin-bottom: 0;
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 0.7rem;
+        color: $color-gray-400;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & {
+        justify-content: center;
+      }
+    }
+  }
+}

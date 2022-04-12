@@ -1,0 +1,50 @@
+/*
+=====================================
+Load more
+=====================================
+*/
+.load-more {
+  padding-top: 3rem;
+  text-align: center;
+
+  .button-load {
+    margin: 0.5rem;
+    padding: 1.2rem 2rem;
+    background: $color-dark;
+    color: $color-white;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+    line-height: 0.9rem;
+    border: 0;
+    outline: 0;
+
+    &:hover {
+      background: var(--gray-dark);
+    }
+
+    &.active i {
+      animation-play-state: running;
+    }
+
+    i {
+      margin-right: 1rem;
+      position: relative;
+      top: 1px;
+      animation-name: rotator;
+      animation-timing-function: linear;
+      animation-duration: 1.25s;
+      animation-iteration-count: infinite;
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes rotator {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

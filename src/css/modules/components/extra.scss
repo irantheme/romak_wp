@@ -1,0 +1,201 @@
+/*
+=====================================
+Parallax
+=====================================
+*/
+
+.parallax-container {
+  z-index: 2;
+
+  &::before {
+    content: '';
+    background: $color-dark-transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+/*
+=====================================
+Swiper style
+=====================================
+*/
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .swiper-slide {
+    text-align: center;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/*
+=====================================
+Diagonal borders
+=====================================
+*/
+
+.diagonal-border {
+  &::after {
+    content: '';
+    width: calc(100vw + 20rem);
+    height: 10rem;
+    background: $color-white;
+    position: absolute;
+    right: -3rem;
+    bottom: -8rem;
+    transform: rotate(-2deg);
+    z-index: 3;
+  }
+}
+
+/*
+=====================================
+Init grid masonry
+=====================================
+*/
+
+.grid-masonry {
+  width: 100% !important;
+
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+    padding: 15px;
+
+    @media screen and (min-width: 576px) {
+      & {
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      & {
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & {
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & {
+        width: 50%;
+      }
+    }
+  }
+}
+
+/*
+=====================================
+Heading mode
+=====================================
+*/
+
+.heading-mode {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+
+  p {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  // Light
+  &.heading-mode-light {
+    h2 {
+      color: $color-white;
+    }
+
+    p {
+      color: $color-gray-300;
+    }
+  }
+
+  // Dark
+  &.heading-mode-dark {
+    h2 {
+      color: $color-dark;
+    }
+
+    p {
+      color: $color-gray-700;
+    }
+  }
+}
+
+/*
+=====================================
+Holding table
+=====================================
+*/
+
+.holding-table {
+  &::before, &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/*
+=====================================
+Go to top
+=====================================
+*/
+
+#go-to-top {
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+  background: $color-darker;
+  color: $color-white;
+  width: 3rem;
+  height: 2.5rem;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  z-index: 8;
+  cursor: pointer;
+
+  &:hover, &.active {
+    color: $color-primary;
+  }
+}

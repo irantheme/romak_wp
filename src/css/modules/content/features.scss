@@ -1,0 +1,42 @@
+/*
+=====================================
+Features
+=====================================
+*/
+
+#features {
+  background: $color-primary;
+  padding: 6rem 0 3rem;
+
+  .feature-box {
+    margin-bottom: 3rem;
+    color: $color-white;
+
+    .feature-icon {
+      float: right;
+      width: 2rem;
+
+      i {
+        font-size: 2rem;
+        color: $color-white;
+      }
+    }
+
+    .feature-content {
+      margin-right: 3rem;
+
+      h3 {
+        font-size: 1.1rem;
+        color: $color-white;
+        /* font-weight: bold; */
+        margin-bottom: 1rem;
+        padding-top: 0.35rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        color: $color-gray-400;
+      }
+    }
+  }
+}

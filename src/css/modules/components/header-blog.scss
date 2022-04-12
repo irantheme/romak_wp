@@ -1,0 +1,133 @@
+/*
+=====================================
+Header blog
+=====================================
+*/
+
+#header-blog {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .container,
+  .container-fluid {
+    position: relative;
+    z-index: 3;
+
+    .heading-info {
+      padding-bottom: 6rem;
+
+      // Breadcrumbs
+      .breadcrumbs {
+        margin-bottom: 0.5rem;
+
+        ul {
+          display: flex;
+          flex-direction: row;
+
+          li {
+            position: relative;
+            display: flex;
+
+            &::after {
+              content: '\ea5a';
+              font-family: $font-family-icons;
+              font-size: 0.6rem;
+              color: $color-primary;
+              display: inline-block;
+              margin-right: 0.5rem;
+            }
+
+            &:not(:last-child) {
+              margin-left: 0.5rem;
+            }
+
+            &:last-child::after {
+              display: none;
+            }
+
+            a,
+            span {
+              font-size: 0.7rem;
+              color: $color-gray-300;
+              display: block;
+
+              &:hover {
+                color: $color-white;
+              }
+            }
+
+            span {
+              color: $color-primary !important;
+            }
+          }
+        }
+      }
+    }
+
+    // Options
+    .options {
+      display: flex;
+      margin-bottom: 1rem;
+
+      .options-layer {
+        background: $color-gray-100-transparent-hight;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: row;
+        font-size: 0.7rem;
+        overflow: hidden;
+
+        // Social networks
+        .social-networks {
+          background: $color-white-transparent-low-fill;
+          padding: 0 1rem;
+          display: flex;
+          border-top-left-radius: 1.5rem;
+          border-bottom-left-radius: 1.5rem;
+
+          li {
+            &:not(:last-child) {
+              margin-left: 0.5rem;
+            }
+
+            a {
+              &:hover {
+                color: $color-white;
+              }
+
+              &.search-alt {
+                &:hover {
+                  color: $color-primary;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+
+        &>span {
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    // Heading main info
+    .heading-main-info {
+      h1 {
+        font-size: 2rem;
+        margin: 0;
+        color: $color-white;
+
+        a {
+          color: $color-white;
+        }
+      }
+
+      p {
+        font-size: 0.8rem;
+        color: $color-gray-300;
+      }
+    }
+  }
+}

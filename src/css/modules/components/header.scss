@@ -1,0 +1,84 @@
+/*
+=====================================
+Header
+=====================================
+*/
+
+#header {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .container,
+  .container-fluid {
+    position: relative;
+    z-index: 3;
+
+    // Banner
+    .banner {
+      position: relative;
+      top: 50%;
+      padding: 4rem 2rem 8rem;
+      margin: auto;
+      width: 100%;
+
+      h2 {
+        font-size: 2rem;
+        line-height: 3.5rem;
+        color: $color-white;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $color-gray-200;
+      }
+
+      @media screen and (min-width: 768px) {
+        & {
+          width: 768px;
+        }
+      }
+    }
+  }
+
+  // Social media
+  .social-media {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    z-index: 3;
+    overflow: hidden;
+    border-radius: 35px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        a {
+          color: $color-white;
+          font-size: 0.7rem;
+          padding: 0.25rem 0.5rem;
+          display: block;
+    
+          &:hover {
+            background: $color-white;
+            color: $color-dark;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      & {
+        transform: none;
+        top: unset;
+        right: unset;
+        bottom: 2rem;
+        left: 2rem;
+      }
+    }
+  }
+}

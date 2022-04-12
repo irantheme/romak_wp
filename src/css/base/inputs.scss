@@ -1,0 +1,212 @@
+/* Forms ---------------------------------------- */
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button,
+.button {
+  background-color: $color-gray-600;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-family-pack;
+  font-size: 0.8rem;
+  font-weight: normal;
+  line-height: 3rem;
+  margin: 1rem 0;
+  padding: 0 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $color-white;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  &:hover {
+    background: $color-gray-700;
+    color: $color-white;
+  }
+
+  &:focus {
+    /* border-color: $color-white; */
+    /* background: $color-white */
+    color: $color-white;
+    outline: none;
+  }
+
+  &:active {
+    /* border-color: $color-white; */
+    /* background: #fff; */
+    color: $color-white;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='url'],
+select,
+textarea {
+  background: $color-white;
+  border: solid 1px $color-gray-200;
+  color: inherit;
+  font-family: $font-family-pack;
+  display: block;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: 60%;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: $color-gray-700;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $color-gray-400;
+  }
+}
+
+textarea {
+  width: 100% !important;
+  height: 20rem;
+  padding: 0.75rem 1rem;
+}
+
+label {
+  color: $color-gray-700;
+  display: block;
+  font-family: $font-family-pack;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.75rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+select {
+  background: $color-white;
+  height: 3rem;
+  padding-right: 3rem;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
+  option {
+    background-color: $color-white;
+    color: $color-dark;
+  }
+
+  &:focus::-ms-value {
+    background-color: transparent;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  &+label {
+    text-decoration: none;
+    color: $color-gray-700;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding-left: 2.675rem;
+    padding-right: 0.875rem;
+    position: relative;
+    text-transform: none;
+  }
+
+  &:focus {
+    label {
+      &::before {
+        border-color: $color-gray-400;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+/* input[type='checkbox'] + label:before,
+input[type='radio'] + label:before {
+  content: '\ea53';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: $font-family-pack;
+  font-weight: 900;
+} */
+
+/* input[type='checkbox'] + label:before,
+input[type='radio'] + label:before {
+  border: solid 1px $color-dark;
+  content: '';
+  display: inline-block;
+  font-size: 0.8rem;
+  height: 1.5rem;
+  left: 0;
+  line-height: 1.5rem;
+  position: absolute;
+  text-align: center;
+  top: -0.15rem;
+  width: 1.5rem;
+} */
+
+/* input[type='checkbox']:checked + label:before,
+input[type='radio']:checked + label:before {
+  content: '\ea55';
+  font-family: iranyekan, iransansx, sans-serif;
+  background-color: $color-gray-400;
+  border-color: $color-gray-400;
+  color: $color-white;
+} */
+
+input[type='search'],
+input[type='text'] {
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  color: $color-dark;
+}
+
+:-moz-placeholder {
+  opacity: 1;
+  color: $color-dark;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  color: $color-dark;
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+  color: $color-dark;
+}

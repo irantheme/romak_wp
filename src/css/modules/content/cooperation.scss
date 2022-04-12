@@ -1,0 +1,28 @@
+/*
+=====================================
+Cooperation
+=====================================
+*/
+#cooperation {
+  background: $color-primary;
+  padding: 3rem 0;
+
+  div[class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-style {
+    width: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @media screen and (min-width: 992px) {
+      & {
+        margin-right: auto;
+      }
+    }
+  }
+}
