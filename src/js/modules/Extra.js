@@ -10,9 +10,9 @@ class Extra {
 
   events() {
     this.scrollSpy();
-    this.setHeightAboutImages();
+    this.setHeightMiniProfileAvatar();
     this.tooltips();
-    $(window).resize(this.setHeightAboutImages);
+    $(window).resize(this.setHeightMiniProfileAvatar);
     $(window).scroll(this.hideGoToTop);
   }
 
@@ -39,12 +39,11 @@ class Extra {
     });
   }
 
-  setHeightAboutImages() {
-    let elements = $('#about .about-list-image li');
-    for (let i = 0; i < elements.length; i++) {
-      let width = $(elements[i]).width();
-      $(elements[i]).height(width);
-    }
+  setHeightMiniProfileAvatar() {
+    let element = $('.mini-profile .mini-profile-avatar img');
+    let width = $(element).width();
+    console.log(width);
+    $(element).height(width);
   }
 
   tooltips() {

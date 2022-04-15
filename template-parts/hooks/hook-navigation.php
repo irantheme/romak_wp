@@ -1,8 +1,8 @@
 <!-- Navigation -->
-<nav id="navigation">
+<nav id="navigation" class="dark">
   <div class="text-center pt-5">
     <!-- Back nav -->
-    <button id="back-nav" class="button-style button-dark">بازگشت<i class="lni lni-chevron-left"></i></button>
+    <button id="back-nav" class="button-style button-light">بازگشت<i class="lni lni-chevron-left"></i></button>
   </div>
   <!-- Logo -->
   <div class="logo">

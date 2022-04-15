@@ -5,6 +5,7 @@ Header
 */
 
 #header {
+  background: $color-gray-100;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -14,71 +15,84 @@ Header
     position: relative;
     z-index: 3;
 
-    // Banner
-    .banner {
-      position: relative;
-      top: 50%;
-      padding: 4rem 2rem 8rem;
-      margin: auto;
-      width: 100%;
+    // Mini profile
+    .mini-profile {
+      display: flex;
+      padding: 5rem 0;
+      
+      // Avatar
+      .mini-profile-avatar {
+        width: 25%;
+        // float: right;
 
-      h2 {
-        font-size: 2rem;
-        line-height: 3.5rem;
-        color: $color-white;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1rem;
-        color: $color-gray-200;
-      }
-
-      @media screen and (min-width: 768px) {
-        & {
-          width: 768px;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+          border: 0.25rem dashed $color-primary;
         }
       }
-    }
-  }
 
-  // Social media
-  .social-media {
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    z-index: 3;
-    overflow: hidden;
-    border-radius: 35px;
+      // Content
+      .mini-profile-content {
+        width: 75%;
+        margin-right: 30px;
 
-    ul {
-      display: flex;
-      flex-direction: column;
+        // Heading
+        .mini-profile-heading {
+          margin-bottom: 1rem;
 
-      li {
-        a {
-          color: $color-white;
-          font-size: 0.7rem;
-          padding: 0.25rem 0.5rem;
-          display: block;
-    
-          &:hover {
-            background: $color-white;
+          h1 {
+            font-size: 2.5rem;
             color: $color-dark;
           }
         }
-      }
-    }
 
-    @media screen and (max-width: 991px) {
-      & {
-        transform: none;
-        top: unset;
-        right: unset;
-        bottom: 2rem;
-        left: 2rem;
+        // Description
+        .mini-profile-description {
+          font-size: 1.1rem;
+          color: $color-gray-800;
+          margin-bottom: 1rem;
+        }
+
+        // Social media
+        .social-media {
+          display: flex;
+          // border-top: 2px solid $color-primary;
+
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 3rem;
+              height: 3rem;
+              background: $color-gray-200;
+              color: $color-gray-600;
+              // margin-right: 30px;
+
+              &:hover {
+                background: $color-gray-400;
+                color: $color-dark;
+              }
+            }
+          }
+        }
       }
+
+      @media screen and (max-width: 992px) {
+        flex-direction: column;
+        
+        .mini-profile-avatar {
+          width: 50%;
+        }
+
+        .mini-profile-content {
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
     }
   }
 }

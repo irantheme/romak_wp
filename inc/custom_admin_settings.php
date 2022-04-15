@@ -85,31 +85,31 @@ if (!class_exists('Irantheme_WordPress_Custom_Admin_Settings')) {
 		private function settings_fields()
 		{
 
-			// Front header page configuration fields data
-			$settings['front_header'] = array(
-				'title'					=> __('(قالب اصلی - هدر)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات هدر (قالب اصلی)', $this->textdomain),
+			// Mini profile (header) configuration fields data
+			$settings['mini_profile'] = array(
+				'title'					=> __('(پروفایل کوچک هدر)', $this->textdomain),
+				'description'			=> __('تنظیمات پروفایل کوچک در هدر', $this->textdomain),
 				'fields'				=> array(
 					array(
-						'id' 			=> 'front_header_bg',
-						'label'			=> __('تصویر پس زمینه هدر', $this->textdomain),
-						'description'	=> __('آپلود یا حذف تصویر پس زمینه هدر فرانت | پیشنهاد ما استفاده از تصویر افقی می باشد.', $this->textdomain),
+						'id' 			=> 'mini_profile_avatar',
+						'label'			=> __('تصویر پروفایل در هدر', $this->textdomain),
+						'description'	=> __('آپلود یا حذف تصویر | پیشنهاد ما استفاده از تصویر مربع شکل می باشد.', $this->textdomain),
 						'type'			=> 'image',
 						'default'		=> '',
 						'placeholder'	=> ''
 					),
 					array(
-						'id' 			=> 'front_header_title',
-						'label'			=> __('عنوان اصلی هدر', $this->textdomain),
-						'description'	=> __('عنوان اصلی هدر که در قسمت مرکزی هدر فرانت قرار دارد.', $this->textdomain),
+						'id' 			=> 'mini_profile_heading',
+						'label'			=> __('نام یا عنوان اصلی پروفایل', $this->textdomain),
+						'description'	=> __('عنوان اصلی شما در پروفایل هدر.', $this->textdomain),
 						'type'			=> 'text',
 						'default'		=> '',
 						'placeholder'	=> ''
 					),
 					array(
-						'id' 			=> 'front_header_description',
-						'label'			=> __('توضیحات عنوان اصلی هدر', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی هدر که در قسمت مرکزی هدر فرانت قرار دارد.', $this->textdomain),
+						'id' 			=> 'mini_profile_description',
+						'label'			=> __('توضیحات یا معرفی پروفایل', $this->textdomain),
+						'description'	=> __('توضیحات یا معرفی مختصر خودتان در پروفایل هدر.', $this->textdomain),
 						'type'			=> 'textarea',
 						'default'		=> '',
 						'placeholder'	=> ''

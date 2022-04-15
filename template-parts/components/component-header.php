@@ -1,34 +1,47 @@
 <!-- Header -->
 <header id="header">
-  <div class="dark-mask"></div>
 
-  <div id="parallax-front-header" class="parallax-container jarallax">
-    <div class="container-fluid p-0">
-      <!-- Main menu -->
-      <div class="main-menu">
-        <button id="nav-open">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+  <div class="container-fluid p-0">
+    <!-- Main menu -->
+    <div class="main-menu">
+      <button id="nav-open" class="dark">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="container">
-      <!-- Banner -->
-      <div class="banner" data-aos="fade-up">
-        <h2><?php echo esc_html__(get_option('irantheme_front_header_title')); ?></h2>
-        <p><?php echo esc_html__(get_option('irantheme_front_header_description')); ?></p>
-        <a href="#features" id="go-down" class="button-style button-light">شروع کنید<i class="lni lni-chevron-left"></i></a>
+  </div>
+
+  <?php
+  $mini_profile_avatar = wp_get_attachment_image_src(get_option('irantheme_mini_profile_avatar'), 'full');
+  ?>
+  <div class="container-holder">
+    <div class="container-fluid">
+      <!-- Mini profile -->
+      <div class="mini-profile">
+        <!-- Avatar -->
+        <div class="mini-profile-avatar">
+          <img src="<?php echo esc_attr($mini_profile_avatar[0]); ?>" alt="تصویر پروفایل">
+        </div>
+        <!-- Content -->
+        <div class="mini-profile-content">
+          <!-- Heading -->
+          <div class="mini-profile-heading">
+            <h1><?php echo __(get_option('irantheme_mini_profile_heading')); ?></h1>
+          </div>
+          <!-- Description -->
+          <div class="mini-profile-description">
+            <p><?php echo __(get_option('irantheme_mini_profile_description')); ?></p>
+          </div>
+          <!-- Social media -->
+          <ul class="social-media">
+            <?php
+            // Get template part of social media
+            get_template_part('/template-parts/hooks/hook', 'social-media');
+            ?>
+          </ul>
+        </div>
       </div>
-    </div>
-    <!-- Social media -->
-    <div class="social-media">
-      <ul>
-        <?php
-        // Get template part of social media
-        get_template_part('/template-parts/hooks/hook', 'social-media');
-        ?>
-      </ul>
     </div>
   </div>
 </header>

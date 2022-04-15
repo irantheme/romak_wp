@@ -581,9 +581,9 @@ class Extra {
 
   events() {
     this.scrollSpy();
-    this.setHeightAboutImages();
+    this.setHeightMiniProfileAvatar();
     this.tooltips();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(this.setHeightAboutImages);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(this.setHeightMiniProfileAvatar);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(this.hideGoToTop);
   }
 
@@ -607,13 +607,11 @@ class Extra {
     });
   }
 
-  setHeightAboutImages() {
-    let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#about .about-list-image li');
-
-    for (let i = 0; i < elements.length; i++) {
-      let width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(elements[i]).width();
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(elements[i]).height(width);
-    }
+  setHeightMiniProfileAvatar() {
+    let element = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.mini-profile .mini-profile-avatar img');
+    let width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).width();
+    console.log(width);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).height(width);
   }
 
   tooltips() {
