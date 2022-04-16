@@ -81,39 +81,78 @@ Init grid masonry
 =====================================
 */
 
-.grid-masonry {
-  width: 100% !important;
-
-  .grid-sizer,
-  .grid-item {
-    width: 100%;
-    padding: 15px;
-
-    @media screen and (min-width: 576px) {
-      & {
-        width: 100%;
+#blog-content {
+  .grid-masonry {
+    width: 100% !important;
+  
+    .grid-sizer,
+    .grid-item {
+      width: 100%;
+      padding: 15px;
+  
+      @media screen and (min-width: 576px) {
+        & {
+          width: 100%;
+        }
       }
-    }
-
-    @media screen and (min-width: 768px) {
-      & {
-        width: 100%;
+  
+      @media screen and (min-width: 768px) {
+        & {
+          width: 100%;
+        }
       }
-    }
-
-    @media screen and (min-width: 992px) {
-      & {
-        width: 33.33333%;
+  
+      @media screen and (min-width: 992px) {
+        & {
+          width: 50%;
+        }
       }
-    }
-
-    @media screen and (min-width: 1200px) {
-      & {
-        width: 33.33333%;
+  
+      @media screen and (min-width: 1200px) {
+        & {
+          width: 50%;
+        }
       }
     }
   }
 }
+
+#projects {
+  .grid-masonry {
+    width: 100% !important;
+  
+    .grid-sizer,
+    .grid-item {
+      width: 100%;
+      padding: 15px;
+  
+      @media screen and (min-width: 576px) {
+        & {
+          width: 100%;
+        }
+      }
+  
+      @media screen and (min-width: 768px) {
+        & {
+          width: 100%;
+        }
+      }
+  
+      @media screen and (min-width: 992px) {
+        & {
+          width: 33.33333%;
+        }
+      }
+  
+      @media screen and (min-width: 1200px) {
+        & {
+          width: 33.33333%;
+        }
+      }
+    }
+  }
+}
+
 
 /*
 =====================================

@@ -20,11 +20,11 @@
       <!-- Mini profile -->
       <div class="mini-profile">
         <!-- Avatar -->
-        <div class="mini-profile-avatar">
+        <div class="mini-profile-avatar" data-aos="fade-left">
           <img src="<?php echo esc_attr($mini_profile_avatar[0]); ?>" alt="تصویر پروفایل">
         </div>
         <!-- Content -->
-        <div class="mini-profile-content">
+        <div class="mini-profile-content" data-aos="fade-right">
           <!-- Heading -->
           <div class="mini-profile-heading">
             <h1><?php echo __(get_option('irantheme_mini_profile_heading')); ?></h1>
