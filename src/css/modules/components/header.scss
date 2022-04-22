@@ -5,10 +5,11 @@ Header
 */
 
 #header {
-  background: $color-gray-100;
+  background: $color-white;
   width: 100%;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid $color-gray-200;
 
   .container,
   .container-fluid {
@@ -24,12 +25,18 @@ Header
       .mini-profile-avatar {
         width: 25%;
         // float: right;
+        overflow: hidden;
 
         img {
           width: 100%;
           height: auto;
           border-radius: 50%;
-          border: 0.25rem dashed $color-primary;
+          object-fit: cover;
+          @include transition(all, 0.1s, cubic-bezier(0.785, 0.135, 0.15, 0.86));
+
+          &:hover {
+            opacity: 0.9;
+          }
         }
       }
 
@@ -45,14 +52,16 @@ Header
           h1 {
             font-size: 2.5rem;
             color: $color-dark;
+            font-weight: bold;
           }
         }
 
         // Description
         .mini-profile-description {
-          font-size: 1.1rem;
+          font-size: 1.25rem;
           color: $color-gray-800;
           margin-bottom: 1rem;
+          line-height: 2rem;
         }
 
         // Social media

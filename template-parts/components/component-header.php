@@ -40,6 +40,10 @@
             get_template_part('/template-parts/hooks/hook', 'social-media');
             ?>
           </ul>
+          <div class="d-flex justify-content-end">
+            <!-- More info profile -->
+            <a href="#" class="button-style button-primary">اطلاعات بیشتر<i class="lni lni-chevron-left"></i></a>
+          </div>
         </div>
       </div>
     </div>

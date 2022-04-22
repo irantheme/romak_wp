@@ -54,7 +54,9 @@
           <?php else : ?>
             <h1><?php echo __($args['title']); ?></h1>
           <?php endif; ?>
-          <p><?php echo __($args['subtitle']); ?></p>
+          <?php if ($args['subtitle']) : ?>
+            <p><?php echo __($args['subtitle']); ?></p>
+          <?php endif; ?>
         </div>
       </div>
     </div>
