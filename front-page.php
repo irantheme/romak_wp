@@ -23,47 +23,17 @@
 
     <?php
     // Get template part of header
-    get_template_part('/template-parts/components/component', 'header');
-    ?>
-
-    <!-- <?php
-          // Get template part of features
-          // get_template_part('/template-parts/content/content', 'features');
-          ?>
-
-    <?php
-    // Get template part of about
-    // get_template_part('/template-parts/components/component', 'about');
+    get_template_part('/template-parts/headers/header', 'front');
     ?>
 
     <?php
     // Get template part of projects
-    get_template_part('/template-parts/content/content', 'projects');
-    ?>
-
-    <?php
-    // Get template part of partners
-    // get_template_part('/template-parts/content/content', 'partners');
+    get_template_part('/template-parts/posts/post', 'projects');
     ?>
 
     <?php
     // Get template part of fullscreen image slider
-    // get_template_part('/template-parts/hooks/hook', 'fullscreen-image-slider');
-    ?>
-
-    <?php
-    // Get template part of cooperation
-    // get_template_part('/template-parts/content/content', 'cooperation');
-    ?>
-
-    <?php
-    // Get template part of latest-blog-posts
-    // get_template_part('/template-parts/content/content', 'latest-blog-posts');
-    ?>
-
-    <?php
-    // Get template part of information
-    // get_template_part('/template-parts/components/component', 'information');
+    get_template_part('/template-parts/hooks/hook', 'fullscreen-image-slider');
     ?>
 
     <?php

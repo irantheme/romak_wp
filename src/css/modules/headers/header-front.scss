@@ -1,0 +1,47 @@
+/*
+=====================================
+Custom logo link
+=====================================
+*/
+
+.logo {
+
+  // Custom logo
+  .custom-logo-link {
+    img {
+      height: 2rem;
+      width: auto;
+    }
+  }
+}
+
+// Mini profile
+  .mini-profile {
+    padding-top: 3rem;
+
+    // Avatar
+    .mini-profile-avatar {
+      margin-bottom: 2rem;
+
+      img {
+        width: 12rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    // Name
+    .mini-profile-name {
+      color: $color-primary;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    // Description
+    .mini-profile-description {
+      color: $color-gray-700;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }

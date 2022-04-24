@@ -117,94 +117,6 @@ if (!class_exists('Irantheme_WordPress_Custom_Admin_Settings')) {
 				),
 			);
 
-			// Front features page configuration fields data
-			$settings['front_features'] = array(
-				'title'					=> __('(قالب اصلی - ویژگی ها)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات ویژگی ها (قالب اصلی)', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'front_features_title',
-						'label'			=> __('عنوان اصلی ویژگی ها', $this->textdomain),
-						'description'	=> __('عنوان اصلی ویژگی ها که در بالای مطالب ویژگی ها قرار دارد.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_features_description',
-						'label'			=> __('توضیحات عنوان اصلی ویژگی ها', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی ویژگی ها که در بالای مطالب ویژگی ها قرار دارد.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-				),
-			);
-
-			// Front about page configuration fields data
-			$settings['front_about'] = array(
-				'title'					=> __('(قالب اصلی - درباره ما)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات درباره ما (قالب اصلی)', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'front_about_little_title',
-						'label'			=> __('عنوان کوچک درباره ما', $this->textdomain),
-						'description'	=> __('عنوان کوچک قرار گرفته در بالای عنوان اصلی.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_title',
-						'label'			=> __('عنوان اصلی درباره ما', $this->textdomain),
-						'description'	=> __('عنوان اصلی درباره ما.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_description',
-						'label'			=> __('توضیحات مختصر درباره ما', $this->textdomain),
-						'description'	=> __('توضیحات اولیه قرار گرفته در زیر عنوان اصلی.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_long_description',
-						'label'			=> __('توضیحات درباره ما', $this->textdomain),
-						'description'	=> __('توضیحات قرار گرفته در زیر توضیحات مختصر درباره ما.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_img_1',
-						'label'			=> __('تصویر اول درباره ما', $this->textdomain),
-						'description'	=> __('تصویر قرار گرفته در کنار توضیحات درباره ما.', $this->textdomain),
-						'type'			=> 'image',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_img_2',
-						'label'			=> __('تصویر دوم درباره ما', $this->textdomain),
-						'description'	=> __('تصویر قرار گرفته در کنار توضیحات درباره ما.', $this->textdomain),
-						'type'			=> 'image',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_about_img_3',
-						'label'			=> __('تصویر سوم درباره ما', $this->textdomain),
-						'description'	=> __('تصویر قرار گرفته در کنار توضیحات درباره ما.', $this->textdomain),
-						'type'			=> 'image',
-						'default'		=> '',
-						'placeholder'	=> ''
-					)
-				),
-			);
-
 			// Front projects page configuration fields data
 			$settings['front_projects'] = array(
 				'title'					=> __('(قالب اصلی - پروژه ها)', $this->textdomain),
@@ -219,83 +131,11 @@ if (!class_exists('Irantheme_WordPress_Custom_Admin_Settings')) {
 						'placeholder'	=> ''
 					),
 					array(
-						'id' 			=> 'front_projects_description',
-						'label'			=> __('توضیحات پروژه ها', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی که در بالای پروژه ها قرار می گیرد.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
 						'id' 			=> 'front_projects_count',
 						'label'			=> __('تعداد مطالب پروژه ها', $this->textdomain),
 						'description'	=> __('تنظیم تعداد مطالب قابل مشاهده در پروژه ها.', $this->textdomain),
 						'type'			=> 'number',
 						'default'		=> 6,
-						'placeholder'	=> ''
-					),
-				),
-			);
-
-			// Front partners page configuration fields data
-			$settings['front_partners'] = array(
-				'title'					=> __('(قالب اصلی - مشتریان)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات مشتریان (قالب اصلی)', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'front_partners_bg',
-						'label'			=> __('تصویر پس زمینه همکاران', $this->textdomain),
-						'description'	=> __('آپلود یا حذف تصویر پس زمینه همکاران | پیشنهاد ما استفاده از تصویر افقی می باشد.', $this->textdomain),
-						'type'			=> 'image',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_partners_title',
-						'label'			=> __('عنوان مشتریان', $this->textdomain),
-						'description'	=> __('عنوان اصلی که در بالای مشتریان قرار می گیرد.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_partners_description',
-						'label'			=> __('توضیحات مشتریان', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی که در بالای مشتریان قرار می گیرد.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-				),
-			);
-
-			// Front cooperation page configuration fields data
-			$settings['front_cooperation'] = array(
-				'title'					=> __('(قالب اصلی - همکاری)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات همکاری (قالب اصلی)', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'front_cooperation_title',
-						'label'			=> __('عنوان همکاری', $this->textdomain),
-						'description'	=> __('عنوان اصلی که در بالای همکاری قرار می گیرد.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_cooperation_description',
-						'label'			=> __('توضیحات همکاری', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی که در بالای همکاری قرار می گیرد.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_cooperation_link',
-						'label'			=> __('لینک شروع همکاری', $this->textdomain),
-						'description'	=> __('لینک دکمه ورود به صفحه شروع همکاری.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
 						'placeholder'	=> ''
 					),
 				),

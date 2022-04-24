@@ -13,7 +13,6 @@ $front_projects_post = new WP_Query(array(
         <!-- Heading mode -->
         <div class="heading-mode heading-mode-dark text-right" data-aos="fade-down">
           <h2><?php echo esc_html__(get_option('irantheme_front_projects_title')); ?></h2>
-          <p><?php echo esc_html__(get_option('irantheme_front_projects_description')); ?></p>
         </div>
         <?php
         $categories = get_categories(array('parent' => 0, 'hide_empty' => 0));

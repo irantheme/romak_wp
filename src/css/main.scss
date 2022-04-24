@@ -12,7 +12,6 @@
 
 // Components
 @import 'modules/components/extra';
-@import 'modules/components/header';
 @import 'modules/components/header-blog';
 @import 'modules/components/header-blog';
 @import 'modules/components/author-profile';
@@ -28,10 +27,15 @@
 @import 'modules/content/latest-blog-posts';
 @import 'modules/content/cooperation';
 @import 'modules/content/categories';
-@import 'modules/content/projects';
 @import 'modules/content/partners';
 @import 'modules/content/features';
 @import 'modules/content/post-styles';
+
+// Header
+@import 'modules/headers/header-front';
+
+// Posts
+@import 'modules/posts/projects';
 
 // Hooks
 @import 'modules/hooks/navigation';
