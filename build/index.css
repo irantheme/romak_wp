@@ -1504,7 +1504,7 @@ Heading mode
 =====================================
 */
 .heading-mode {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .heading-mode h2 {
   font-size: 2.4rem;
@@ -2458,32 +2458,6 @@ Latest blog posts
 
 /*
 =====================================
-Cooperation
-=====================================
-*/
-#cooperation {
-  background: #0088cc;
-  padding: 3rem 0;
-}
-#cooperation div[class*=col-] {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#cooperation .button-style {
-  width: 40%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 992px) {
-  #cooperation .button-style {
-    margin-right: auto;
-  }
-}
-
-/*
-=====================================
 Categories
 =====================================
 */
@@ -2509,88 +2483,6 @@ Categories
   border-color: #0088cc;
   opacity: 1;
   color: #0088cc;
-}
-
-/*
-=====================================
-Partners
-=====================================
-*/
-#partners {
-  background: rgba(33, 33, 33, 0.85);
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-#partners .container {
-  z-index: 3;
-  position: relative;
-  padding: 6rem 0;
-}
-#partners .container .swiper-slide {
-  color: #fff;
-}
-#partners .container .swiper-slide img {
-  filter: invert(1);
-  opacity: 0.2;
-}
-#partners .container .swiper-slide.swiper-slide-active img {
-  opacity: 1;
-}
-#partners .container .viewpoint {
-  padding-top: 3rem;
-}
-#partners .container .viewpoint .swiper-slide {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-#partners .container .viewpoint .swiper-slide blockquote {
-  color: #e9ecef;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-#partners .container .viewpoint .swiper-slide blockquote::before {
-  content: "\eb69";
-  font-family: "LineIcons";
-  font-size: 2rem;
-  color: #fff;
-  position: absolute;
-  right: -2rem;
-  bottom: -1rem;
-}
-#partners .container .viewpoint .swiper-slide blockquote::after {
-  content: "\eb69";
-  font-family: "LineIcons";
-  font-size: 2rem;
-  color: #fff;
-  position: absolute;
-  left: -2rem;
-  top: -1rem;
-  transform: rotate(-180deg);
-}
-#partners .container .viewpoint .swiper-slide b {
-  color: #fff;
-  font-size: 1rem;
-}
-#partners .container .viewpoint .swiper-slide cite {
-  color: #e9ecef;
-  font-size: 0.8rem;
-}
-#partners .container .viewpoint .swiper-pagination {
-  position: relative;
-  z-index: 3;
-}
-#partners .container .viewpoint .swiper-pagination .swiper-pagination-bullet {
-  background: #fff;
-  opacity: 0.3;
-}
-#partners .container .viewpoint .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #fff;
-  opacity: 1;
 }
 
 /*
@@ -3276,6 +3168,9 @@ Projects
   position: relative;
   z-index: 1;
 }
+#projects .heading-mode {
+  margin-bottom: 6rem;
+}
 #projects .post {
   position: relative;
 }
@@ -3413,6 +3308,68 @@ Projects
   #projects .grid-masonry .grid-sizer,
 #projects .grid-masonry .grid-item {
     width: 33.33333%;
+  }
+}
+
+/*
+=====================================
+Partners
+=====================================
+*/
+#partners {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 3rem 0;
+  margin-bottom: 6rem;
+}
+#partners .heading-mode {
+  margin-bottom: 6rem;
+  text-align: justify;
+}
+#partners .heading-mode h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+#partners .heading-mode p {
+  font-size: 1rem;
+}
+#partners .partners-brands {
+  text-align: center;
+}
+#partners .partners-brands .partner-item {
+  padding: 3rem 1.5rem;
+}
+#partners .partners-brands .partner-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  opacity: 0.5;
+}
+
+/*
+=====================================
+Contact dark simple
+=====================================
+*/
+#contact-dark-simple {
+  background: #212529;
+  padding: 3rem 0;
+}
+#contact-dark-simple div[class*=col-] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact-dark-simple .button-style {
+  width: 40%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 992px) {
+  #contact-dark-simple .button-style {
+    margin-right: auto;
   }
 }
 
@@ -3562,7 +3519,7 @@ Search box
 }
 
 .main-menu {
-  padding: 2rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -1,21 +1,25 @@
 <!-- Header -->
 <header id="header">
 
-  <div class="container-fluid p-0">
-    <!-- Main menu -->
-    <div class="main-menu">
+  <div class="container-holder">
+    <div class="container-fluid">
+      <!-- Main menu -->
+      <div class="main-menu">
 
-      <!-- Logo -->
-      <div class="logo">
-        <?php echo get_custom_logo(); ?>
+        <?php if (has_custom_logo()) : ?>
+          <!-- Logo -->
+          <div class="logo">
+            <?php echo get_custom_logo(); ?>
+          </div>
+        <?php endif; ?>
+
+        <!-- Open nav -->
+        <button id="nav-open" class="dark">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
-      <!-- Open nav -->
-      <button id="nav-open" class="dark">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </div>
 

@@ -13,7 +13,7 @@
 
   <?php
   // Get template part of navigation
-  get_template_part('/template-parts/hooks/hook', 'navigation');
+  get_template_part('/template-parts/utils/util', 'navigation');
   ?>
 
   <!-- Wrapper -->
@@ -33,7 +33,17 @@
 
     <?php
     // Get template part of fullscreen image slider
-    get_template_part('/template-parts/hooks/hook', 'fullscreen-image-slider');
+    get_template_part('/template-parts/utils/util', 'fullscreen-image-slider');
+    ?>
+
+    <?php
+    // Get template part of Partners
+    get_template_part('/template-parts/posts/post', 'partners');
+    ?>
+
+    <?php
+    // Get template part of Partners
+    get_template_part('/template-parts/contacts/contact', 'dark-simple');
     ?>
 
     <?php

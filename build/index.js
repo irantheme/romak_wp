@@ -929,7 +929,7 @@ class LoadProjects {
 
       projects = projects.splice(0, 6); // Append rest projects
 
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .container .grid-masonry').append(`
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .grid-masonry').append(`
           ${projects.map(item => `
               <div class="grid-item post-holder" data-cate="${item.dataCategory}" data-id="${item.id}">
                 <article class="post">

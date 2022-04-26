@@ -14,27 +14,7 @@ $front_projects_post = new WP_Query(array(
         <div class="heading-mode heading-mode-dark text-right" data-aos="fade-down">
           <h2><?php echo esc_html__(get_option('irantheme_front_projects_title')); ?></h2>
         </div>
-        <?php
-        $categories = get_categories(array('parent' => 0, 'hide_empty' => 0));
-        if (count($categories)) : ?>
-          <!-- Categories -->
-          <div class="categories" data-aos="fade-down">
-            <ul>
-              <li>
-                <span id="all-categories" class="active">همه</span>
-              </li>
-              <?php
-              $categories = get_categories(array(
-                'orderby' => 'name',
-                'parent' => 0
-              ));
-              foreach ($categories as $category) {
-                echo '<li><span data-cate="' . esc_attr($category->term_id) . '">' . esc_html__($category->name) . '</span></li>';
-              }
-              ?>
-            </ul>
-          </div>
-        <?php endif; ?>
+
       </div>
       <div class="container-holder">
         <div class="container-fluid">

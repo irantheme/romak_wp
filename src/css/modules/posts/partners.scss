@@ -1,0 +1,41 @@
+/*
+=====================================
+Partners
+=====================================
+*/
+#partners {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 3rem 0;
+  margin-bottom: 6rem;
+
+  // Heading mode
+  .heading-mode {
+    margin-bottom: 6rem;
+    text-align: justify;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .partners-brands {
+    text-align: center;
+
+    .partner-item {
+      padding: 3rem 1.5rem;
+
+      img {
+        object-fit: cover;
+        max-width: 100%;
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
-// Utils
-@import 'utils/mixins';
-@import 'utils/animations';
+// Tools
+@import 'tools/mixins';
+@import 'tools/animations';
 
 // Base
 @import 'base/variables';
@@ -25,9 +25,7 @@
 
 // Content
 @import 'modules/content/latest-blog-posts';
-@import 'modules/content/cooperation';
 @import 'modules/content/categories';
-@import 'modules/content/partners';
 @import 'modules/content/features';
 @import 'modules/content/post-styles';
 
@@ -36,6 +34,11 @@
 
 // Posts
 @import 'modules/posts/projects';
+@import 'modules/posts/partners';
+
+// Contacts
+@import 'modules/contacts/contact-dark-simple';
+
 
 // Hooks
 @import 'modules/hooks/navigation';

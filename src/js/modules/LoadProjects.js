@@ -59,7 +59,7 @@ class LoadProjects {
       // Divide projects to sliced projects
       projects = projects.splice(0, 6);
       // Append rest projects
-      $('#projects .container .grid-masonry').append(`
+      $('#projects .grid-masonry').append(`
           ${projects
             .map(
               (item) => `
