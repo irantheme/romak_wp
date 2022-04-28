@@ -113,3 +113,33 @@ Button styles
     }
   }
 }
+
+/*
+=====================================
+Button simple
+=====================================
+*/
+
+.button-simple {
+  background: transparent;
+  display: inline-block;
+  margin: 1rem 0;
+  border: 0;
+  outline: none;
+  color: $color-primary;
+  padding: 1.5rem 3rem;
+  height: auto;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  border-radius: 2.5px;
+  position: relative;
+
+  &.button-primary {
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: $color-secondary;
+    }
+  }
+}

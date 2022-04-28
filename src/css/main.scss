@@ -18,7 +18,6 @@
 @import 'modules/components/about';
 @import 'modules/components/additional-styles';
 @import 'modules/components/footer-blog';
-@import 'modules/components/footer';
 @import 'modules/components/blocks';
 @import 'modules/components/information';
 @import 'modules/components/author-post-single';
@@ -29,8 +28,11 @@
 @import 'modules/content/features';
 @import 'modules/content/post-styles';
 
-// Header
+// Headers
 @import 'modules/headers/header-front';
+
+// Footers
+@import 'modules/footers/footer-white-simple';
 
 // Posts
 @import 'modules/posts/projects';
@@ -40,11 +42,11 @@
 @import 'modules/contacts/contact-dark-simple';
 
 
-// Hooks
-@import 'modules/hooks/navigation';
-@import 'modules/hooks/search-box';
-@import 'modules/hooks/navbar';
-@import 'modules/hooks/fullscreen-image-slider';
-@import 'modules/hooks/comments';
-@import 'modules/hooks/load-more';
-@import 'modules/hooks/gallery';
+// Utils
+@import 'modules/utils/navigation';
+@import 'modules/utils/search-box';
+@import 'modules/utils/navbar';
+@import 'modules/utils/fullscreen-image-slider';
+@import 'modules/utils/comments';
+@import 'modules/utils/load-more';
+@import 'modules/utils/gallery';

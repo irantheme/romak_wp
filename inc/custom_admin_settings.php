@@ -117,76 +117,52 @@ if (!class_exists('Irantheme_WordPress_Custom_Admin_Settings')) {
 				),
 			);
 
-			// Front projects page configuration fields data
-			$settings['front_projects'] = array(
-				'title'					=> __('(قالب اصلی - پروژه ها)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات پروژه ها (قالب اصلی)', $this->textdomain),
+			// Front posts page configuration fields data
+			$settings['front_posts'] = array(
+				'title'					=> __('(مطالب)', $this->textdomain),
+				'description'			=> __('برخی از تنظیمات مطالب سایت', $this->textdomain),
 				'fields'				=> array(
 					array(
-						'id' 			=> 'front_projects_title',
-						'label'			=> __('عنوان پروژه ها', $this->textdomain),
-						'description'	=> __('عنوان اصلی که در بالای پروژه ها قرار می گیرد.', $this->textdomain),
+						'id' 			=> 'front_posts_title',
+						'label'			=> __('عنوان مطالب', $this->textdomain),
+						'description'	=> __('عنوانی که بالای مطالب در صفحه اصلی قرار می گیرد.', $this->textdomain),
 						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_projects_count',
-						'label'			=> __('تعداد مطالب پروژه ها', $this->textdomain),
-						'description'	=> __('تنظیم تعداد مطالب قابل مشاهده در پروژه ها.', $this->textdomain),
-						'type'			=> 'number',
-						'default'		=> 6,
-						'placeholder'	=> ''
-					),
-				),
-			);
-
-			// Front latest blog post configuration fields data
-			$settings['front_latest_blog_post'] = array(
-				'title'					=> __('(قالب اصلی - آخرین پست های بلاگ)', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات آخرین پست های وبلاگ (قالب اصلی)', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'front_latest_blog_post_title',
-						'label'			=> __('عنوان آخرین پست ها', $this->textdomain),
-						'description'	=> __('عنوان اصلی که در بالای آخرین پست ها قرار می گیرد.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_latest_blog_post_description',
-						'label'			=> __('توضیحات آخرین پست ها', $this->textdomain),
-						'description'	=> __('توضیحات عنوان اصلی که در بالای آخرین پست ها قرار می گیرد.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'front_latest_blog_post_count',
-						'label'			=> __('تعداد آخرین مطالب وبلاگ', $this->textdomain),
-						'description'	=> __('تنظیم تعداد مطالب قابل مشاهده در آخرین مطالب وبلاگ.', $this->textdomain),
-						'type'			=> 'number',
-						'default'		=> 3,
-						'placeholder'	=> ''
-					),
-				),
-			);
-
-			// Blog configuration fields data
-			$settings['blog'] = array(
-				'title'					=> __('وبلاگ', $this->textdomain),
-				'description'			=> __('برخی از تنظیمات وبلاگ', $this->textdomain),
-				'fields'				=> array(
-					array(
-						'id' 			=> 'blog_header_bg',
-						'label'			=> __('تصویر پس زمینه هدر', $this->textdomain),
-						'description'	=> __('آپلود یا حذف تصویر پس زمینه هدر وبلاگ | پیشنهاد ما استفاده از تصویر افقی می باشد.', $this->textdomain),
-						'type'			=> 'image',
 						'default'		=> '',
 						'placeholder'	=> ''
 					)
-				)
+				),
+			);
+
+			// Front contact page configuration fields data
+			$settings['front_contact'] = array(
+				'title'					=> __('(تماس با ما)', $this->textdomain),
+				'description'			=> __('برخی از تنظیمات بخش تماس با ما.', $this->textdomain),
+				'fields'				=> array(
+					array(
+						'id' 			=> 'front_contact_title',
+						'label'			=> __('عنوان تماس با ما', $this->textdomain),
+						'description'	=> __('عنوان تماس با ما که در کنار دکمه قرار می گیرد.', $this->textdomain),
+						'type'			=> 'text',
+						'default'		=> '',
+						'placeholder'	=> ''
+					),
+					array(
+						'id' 			=> 'front_contact_text_button',
+						'label'			=> __('متن دکمه تماس با ما', $this->textdomain),
+						'description'	=> __('متن داخل دکمه تماس با ما.', $this->textdomain),
+						'type'			=> 'text',
+						'default'		=> '',
+						'placeholder'	=> ''
+					),
+					array(
+						'id' 			=> 'front_contact_link_button',
+						'label'			=> __('لینک تماس با ما', $this->textdomain),
+						'description'	=> __('لینک دکمه تماس با ما جهت انتقال به صفحه فرم تماس با ما.', $this->textdomain),
+						'type'			=> 'text',
+						'default'		=> '',
+						'placeholder'	=> ''
+					),
+				),
 			);
 
 			// general configuration fields data

@@ -117,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_modules_Extra__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/modules/Extra */ "./src/js/modules/Extra.js");
 /* harmony import */ var _js_modules_Search__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/modules/Search */ "./src/js/modules/Search.js");
 /* harmony import */ var _js_modules_Navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/modules/Navigation */ "./src/js/modules/Navigation.js");
-/* harmony import */ var _js_modules_LoadProjects__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/modules/LoadProjects */ "./src/js/modules/LoadProjects.js");
+/* harmony import */ var _js_modules_LoadPosts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/modules/LoadPosts */ "./src/js/modules/LoadPosts.js");
 /* harmony import */ var _js_modules_CategoryTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/modules/CategoryTrigger */ "./src/js/modules/CategoryTrigger.js");
 /* harmony import */ var _js_modules_Like__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/modules/Like */ "./src/js/modules/Like.js");
 /* harmony import */ var _js_modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/modules/FullscreenSlider */ "./src/js/modules/FullscreenSlider.js");
@@ -140,7 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 let navigation = new _js_modules_Navigation__WEBPACK_IMPORTED_MODULE_7__["default"]();
 let extra = new _js_modules_Extra__WEBPACK_IMPORTED_MODULE_5__["default"]();
 let search = new _js_modules_Search__WEBPACK_IMPORTED_MODULE_6__["default"]();
-let loadProjects = new _js_modules_LoadProjects__WEBPACK_IMPORTED_MODULE_8__["default"]();
+let loadPosts = new _js_modules_LoadPosts__WEBPACK_IMPORTED_MODULE_8__["default"]();
 let masonryJs = new _js_libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__["default"]();
 let swiper = new _js_libs_SwiperJs__WEBPACK_IMPORTED_MODULE_2__["default"]();
 let categoryTrigger = new _js_modules_CategoryTrigger__WEBPACK_IMPORTED_MODULE_9__["default"]();
@@ -854,10 +854,10 @@ class Like {
 
 /***/ }),
 
-/***/ "./src/js/modules/LoadProjects.js":
-/*!****************************************!*\
-  !*** ./src/js/modules/LoadProjects.js ***!
-  \****************************************/
+/***/ "./src/js/modules/LoadPosts.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/LoadPosts.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -865,17 +865,17 @@ class Like {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../libs/MasonryJs */ "./src/js/libs/MasonryJs.js");
-/* harmony import */ var _modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../modules/FullscreenSlider */ "./src/js/modules/FullscreenSlider.js");
+/* harmony import */ var _libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../libs/MasonryJs */ "./src/js/libs/MasonryJs.js");
+/* harmony import */ var _FullscreenSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FullscreenSlider */ "./src/js/modules/FullscreenSlider.js");
 
  // import ParallaxJs from './../libs/ParallaxJs';
 
 
 /* ===============================================================
-  Load Projects
+  Load Posts
 =============================================================== */
 
-class LoadProjects {
+class LoadPosts {
   constructor() {
     this.btnLoad = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#loading-projects');
     this.masonryJs = new _libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__["default"]();
@@ -885,11 +885,11 @@ class LoadProjects {
   }
 
   events() {
-    // Loading remaining of projects in click load button
+    // Loading remaining of posts in click load button
     this.btnLoad.on('click', () => {
       this.btnLoad.addClass('active');
       setTimeout(() => {
-        this.loadingProjects();
+        this.loadingPosts();
       }, 1000);
       setTimeout(() => {
         this.btnLoad.removeClass('active');
@@ -897,7 +897,7 @@ class LoadProjects {
       }, 1001);
       setTimeout(() => {
         // Initialize fullscreen slider
-        this.fullscreenSlider = new _modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_2__["default"]();
+        this.fullscreenSlider = new _FullscreenSlider__WEBPACK_IMPORTED_MODULE_2__["default"]();
       }, 2000);
     });
   } // Check remaining projects for hiding button load
@@ -905,32 +905,32 @@ class LoadProjects {
 
   hideLoadingButton() {
     // Get current body project length
-    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(wpData.rootUrl + '/wp-json/json/v1/projects', result => {
-      let projectCounts = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder').length; // Get unload project length
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(wpData.rootUrl + '/wp-json/json/v1/posts', result => {
+      let postCounts = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder').length; // Get unload posts length
 
-      var projectUnloadCount = 0; // Assign length unload project
+      var postUnloadCount = 0; // Assign length unload post
 
-      projectUnloadCount = result.projects.length; // Check count of current project and unload project
+      postUnloadCount = result.posts.length; // Check count of current post and unload post
 
-      if (projectCounts >= projectUnloadCount) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.load-more').hide();
+      if (postCounts >= postUnloadCount) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.load-more').hide();
     });
-  } // Get json data projects
+  } // Get json data posts
 
 
-  loadingProjects() {
+  loadingPosts() {
     // Get json data with api
-    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(wpData.rootUrl + '/wp-json/json/v1/projects', result => {
-      // Temporary projects of result project
-      let projects = result.projects; // Get length of body projects
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(wpData.rootUrl + '/wp-json/json/v1/posts', result => {
+      // Temporary posts of result project
+      let posts = result.posts; // Get length of body posts
 
-      let currentProjectsCount = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder').length; // Slicing body projects from loaded projects
+      let currentPostsCount = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder').length; // Slicing body posts from loaded posts
 
-      projects.splice(0, currentProjectsCount); // Divide projects to sliced projects
+      posts.splice(0, currentPostsCount); // Divide posts to sliced posts
 
-      projects = projects.splice(0, 6); // Append rest projects
+      posts = posts.splice(0, 6); // Append rest posts
 
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .grid-masonry').append(`
-          ${projects.map(item => `
+          ${posts.map(item => `
               <div class="grid-item post-holder" data-cate="${item.dataCategory}" data-id="${item.id}">
                 <article class="post">
                   <a href="${item.permalink}" class="post-link">
@@ -979,7 +979,7 @@ class LoadProjects {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (LoadProjects);
+/* harmony default export */ __webpack_exports__["default"] = (LoadPosts);
 
 /***/ }),
 

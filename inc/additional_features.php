@@ -11,6 +11,8 @@ if (!function_exists('irantheme_include_features')) {
   {
     // Register nav header
     register_nav_menu('headerNavLocation', 'منوی شناور اصلی');
+    // Register nav header
+    register_nav_menu('contactMiniMenu', 'منوی کوچک تماس با ما');
     // Add title tag
     add_theme_support('title-tag');
     // Add thumbnail image to posts

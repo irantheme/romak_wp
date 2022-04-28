@@ -1,0 +1,20 @@
+/*
+=====================================
+Footer white simple
+=====================================
+*/
+
+#footer-white-simple {
+  text-align: center;
+  background: $color-white;
+  padding: 2rem 0;
+
+  .copyright {
+    font-size: 0.8rem;
+    color: $color-gray-500;
+
+    a {
+      color: $color-gray-500;
+    }
+  }
+}

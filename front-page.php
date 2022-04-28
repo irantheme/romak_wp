@@ -27,8 +27,8 @@
     ?>
 
     <?php
-    // Get template part of projects
-    get_template_part('/template-parts/posts/post', 'projects');
+    // Get template part of posts
+    get_template_part('/template-parts/posts/post', 'posts');
     ?>
 
     <?php
@@ -48,7 +48,7 @@
 
     <?php
     // Get template part of footer
-    get_template_part('/template-parts/components/component', 'footer');
+    get_template_part('/template-parts/footers/footer', 'white-simple');
     ?>
 
   </div>

@@ -1,11 +1,11 @@
 import $ from 'jquery';
-import MasonryJs from './../libs/MasonryJs';
+import MasonryJs from '../libs/MasonryJs';
 // import ParallaxJs from './../libs/ParallaxJs';
-import FullscreenSlider from './../modules/FullscreenSlider';
+import FullscreenSlider from './FullscreenSlider';
 /* ===============================================================
-  Load Projects
+  Load Posts
 =============================================================== */
-class LoadProjects {
+class LoadPosts {
   constructor() {
     this.btnLoad = $('#loading-projects');
     this.masonryJs = new MasonryJs();
@@ -15,11 +15,11 @@ class LoadProjects {
   }
 
   events() {
-    // Loading remaining of projects in click load button
+    // Loading remaining of posts in click load button
     this.btnLoad.on('click', () => {
       this.btnLoad.addClass('active');
       setTimeout(() => {
-        this.loadingProjects();
+        this.loadingPosts();
       }, 1000);
       setTimeout(() => {
         this.btnLoad.removeClass('active');
@@ -35,32 +35,32 @@ class LoadProjects {
   // Check remaining projects for hiding button load
   hideLoadingButton() {
     // Get current body project length
-    $.getJSON(wpData.rootUrl + '/wp-json/json/v1/projects', (result) => {
-      let projectCounts = $('#projects .post-holder').length;
-      // Get unload project length
-      var projectUnloadCount = 0;
-      // Assign length unload project
-      projectUnloadCount = result.projects.length;
-      // Check count of current project and unload project
-      if (projectCounts >= projectUnloadCount) $('.load-more').hide();
+    $.getJSON(wpData.rootUrl + '/wp-json/json/v1/posts', (result) => {
+      let postCounts = $('#projects .post-holder').length;
+      // Get unload posts length
+      var postUnloadCount = 0;
+      // Assign length unload post
+      postUnloadCount = result.posts.length;
+      // Check count of current post and unload post
+      if (postCounts >= postUnloadCount) $('.load-more').hide();
     });
   }
 
-  // Get json data projects
-  loadingProjects() {
+  // Get json data posts
+  loadingPosts() {
     // Get json data with api
-    $.getJSON(wpData.rootUrl + '/wp-json/json/v1/projects', (result) => {
-      // Temporary projects of result project
-      let projects = result.projects;
-      // Get length of body projects
-      let currentProjectsCount = $('#projects .post-holder').length;
-      // Slicing body projects from loaded projects
-      projects.splice(0, currentProjectsCount);
-      // Divide projects to sliced projects
-      projects = projects.splice(0, 6);
-      // Append rest projects
+    $.getJSON(wpData.rootUrl + '/wp-json/json/v1/posts', (result) => {
+      // Temporary posts of result project
+      let posts = result.posts;
+      // Get length of body posts
+      let currentPostsCount = $('#projects .post-holder').length;
+      // Slicing body posts from loaded posts
+      posts.splice(0, currentPostsCount);
+      // Divide posts to sliced posts
+      posts = posts.splice(0, 6);
+      // Append rest posts
       $('#projects .grid-masonry').append(`
-          ${projects
+          ${posts
             .map(
               (item) => `
               <div class="grid-item post-holder" data-cate="${
@@ -112,4 +112,4 @@ class LoadProjects {
   }
 }
 
-export default LoadProjects;
+export default LoadPosts;

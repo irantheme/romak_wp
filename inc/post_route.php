@@ -5,16 +5,16 @@
  * Register custom json search url
  * @return void
  */
-function registerLoadingProjects()
+function registerLoadingPosts()
 {
-  register_rest_route('json/v1', 'projects', array(
+  register_rest_route('json/v1', 'posts', array(
     'methods' => WP_REST_SERVER::READABLE,
-    'callback' => 'resultsProjects',
+    'callback' => 'resultsPosts',
     'permission_callback' => '__return_true'
   ));
 }
 // Run above
-add_action('rest_api_init', 'registerLoadingProjects');
+add_action('rest_api_init', 'registerLoadingPosts');
 
 
 /**
@@ -22,19 +22,19 @@ add_action('rest_api_init', 'registerLoadingProjects');
  * @return array
  * @param array data
  */
-function resultsProjects($data)
+function resultsPosts($data)
 {
 
   // Getting new query for post and page type
   $mainQuery = new WP_Query(array(
-    'post_type' => array('project'),
+    'post_type' => array('post'),
     's' => sanitize_text_field($data['term']), // Sanitize is more security for wordpress functions
     'posts_per_page' => 99999999
   ));
 
   // Create results for maintenance created json data
   $results = array(
-    'projects' => array()
+    'posts' => array()
   );
 
   // Check of of them posts
@@ -69,8 +69,8 @@ function resultsProjects($data)
       }
     }
     // Appending data to results array
-    if (get_post_type() == 'project') {
-      array_push($results['projects'], array(
+    if (get_post_type() == 'post') {
+      array_push($results['posts'], array(
         'id' => get_the_ID(),
         'title' => get_the_title(),
         'content' => wp_trim_words(strip_shortcodes(get_the_excerpt()), 43),

@@ -1,7 +1,6 @@
 <?php
 $front_projects_post = new WP_Query(array(
-  'post_type' => 'project',
-  'posts_per_page' => intval(esc_html__(get_option('irantheme_front_projects_count'))),
+  'post_type' => 'post'
 ));
 ?>
 <?php if ($front_projects_post->have_posts()) : ?>
@@ -11,8 +10,8 @@ $front_projects_post = new WP_Query(array(
       <div class="container-fluid">
 
         <!-- Heading mode -->
-        <div class="heading-mode heading-mode-dark text-right" data-aos="fade-down">
-          <h2><?php echo esc_html__(get_option('irantheme_front_projects_title')); ?></h2>
+        <div class="heading-mode heading-mode-dark text-right" data-aos="fade-up">
+          <h2><?php echo esc_html__(get_option('irantheme_front_posts_title')); ?></h2>
         </div>
 
       </div>
