@@ -1,0 +1,64 @@
+/*
+=====================================
+Mini profile
+=====================================
+*/
+.mini-profile {
+  padding-top: 3rem;
+
+  // Avatar
+  .mini-profile-avatar {
+    margin-bottom: 2rem;
+
+    img {
+      width: 12rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  // Name
+  .mini-profile-name {
+    color: $color-primary;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  // Description
+  .mini-profile-description {
+    color: $color-gray-700;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .social-media-footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+
+    li {
+      margin-left: 0.5rem;
+
+      &:last-child {
+        margin-left: 0;
+      }
+
+      a {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-gray-700;
+        background: $color-gray-100;
+        border-radius: 50%;
+        
+        &:hover {
+          background: $color-gray-200;
+        }
+      }
+    }
+  }
+}
