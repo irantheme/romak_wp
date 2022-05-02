@@ -28,7 +28,6 @@
 @import 'modules/content/latest-blog-posts';
 @import 'modules/content/categories';
 @import 'modules/content/features';
-@import 'modules/content/post-styles';
 
 // Headers
 @import 'modules/headers/header-front';
@@ -39,6 +38,7 @@
 // Posts
 @import 'modules/posts/projects';
 @import 'modules/posts/partners';
+@import 'modules/posts/single';
 
 // Contacts
 @import 'modules/contacts/contact-dark-simple';

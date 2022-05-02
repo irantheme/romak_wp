@@ -4,14 +4,19 @@ Blog content
 =====================================
 */
 
-// Post box
-.post-box {
+#blog-content {
   background: $color-white;
-  margin-bottom: 30px;
-}
+  padding: 6rem 0;
 
-.post-content {
-  padding: 2rem;
+  // All posts, grid masonry (main)
+  main.grid-masonry {
+
+    // padding: 0 -15px;
+    // Post holder
+    .post-holder {
+      padding: 0 15px;
+    }
+  }
 }
 
 // Post image
@@ -55,115 +60,46 @@ Blog content
   }
 }
 
-// Post slider
-.post-slider {
-  .post-slider-link {
-    display: block;
-    position: relative;
-  }
+// Single next prev post
+.next-prev-post {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 
-  .post-image-slider-buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
+  a {
+    margin-left: 1rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    background: $color-gray-100;
+    color: $color-gray-600;
+    border-radius: 50%;
 
-    &>div[class*='post-image'] {
-      width: 3rem;
-      height: 3rem;
-      background: rgba(0, 0, 0, 0.6);
-      color: $color-white;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      text-align: center;
-      font-weight: bold;
-      font-size: 0.8rem;
+    &:hover {
+      background: $color-gray-200;
+    }
 
-      &.swiper-button-disabled {
-        color: $color-gray-600;
+    &.disable {
+      color: $color-gray-300;
+
+      &.disable:hover {
+        background: $color-gray-100;
+        color: $color-gray-300;
         cursor: default;
       }
     }
   }
 }
 
-// Post video
-.post-video {
-  video {
-    width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-  }
-}
 
-// Post category
-.post-category {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1rem;
-  z-index: 3;
-
-  span {
-    background: $color-dark-transparent-low;
-    color: $color-white;
-    font-size: 0.7rem;
-    padding: 0.25rem 1rem;
-    border-radius: 3rem;
-    margin-top: 0.25rem;
-
-    &:not(:last-child) {
-      margin-left: 0.25rem;
-    }
-  }
-}
-
-// Post category (Without thumbnail)
-.post-category-no-thumbnail {
+// Single heading
+.single-heading {
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  a {
-    background: $color-gray-900;
-    color: $color-white;
-    font-size: 0.7rem;
-    padding: 0.25rem 1rem;
-    border-radius: 3rem;
-    margin-bottom: 0.25rem;
-
-    &:hover {
-      background: $color-darker;
-    }
-
-    &:not(:last-child) {
-      margin-left: 0.25rem;
-    }
-  }
-}
-
-// Post heading
-.post-heading {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $color-gray-200;
 
   span {
     font-size: 0.7rem;
@@ -174,10 +110,12 @@ Blog content
     }
   }
 
-  h2 {
+  h1 {
     font-size: 1rem;
-    color: $color-gray-900;
+    color: $color-dark;
     line-height: 1.6rem;
+    font-weight: 400;
+    margin: 0;
 
     a {
       color: inherit;
@@ -185,9 +123,10 @@ Blog content
   }
 }
 
-// Post text
-.post-text {
-  font-size: 0.9rem;
+// Single text
+.single-text {
+  font-size: 0.8rem;
+  font-weight: 300;
   color: $color-gray-700;
   margin-bottom: 1rem;
 
@@ -552,21 +491,6 @@ Blog content
       position: absolute;
       right: 2rem;
       white-space: nowrap;
-    }
-  }
-}
-
-#blog-content {
-  background: $color-gray-200;
-  padding: 6rem 0;
-
-  // All posts, grid masonry (main)
-  main.grid-masonry {
-
-    // padding: 0 -15px;
-    // Post holder
-    .post-holder {
-      padding: 0 15px;
     }
   }
 }

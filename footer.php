@@ -8,6 +8,8 @@
     get_template_part('/template-parts/footers/footer', 'white-simple');
     ?>
 
+    </div>
+
     <?php wp_footer(); ?>
     </body>
 
