@@ -585,6 +585,7 @@ class Extra {
     this.tooltips();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(this.setHeightMiniProfileAvatar);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(this.hideGoToTop);
+    this.shareListToggle();
   }
 
   scrollSpy() {
@@ -625,6 +626,13 @@ class Extra {
     } else {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#go-to-top').fadeOut(250);
     }
+  } // Toggle of share list
+
+
+  shareListToggle() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.single-share-button').on('click', () => {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.single-share-list').toggleClass('active');
+    });
   }
 
 }

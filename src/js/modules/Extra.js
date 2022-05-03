@@ -14,6 +14,7 @@ class Extra {
     this.tooltips();
     $(window).resize(this.setHeightMiniProfileAvatar);
     $(window).scroll(this.hideGoToTop);
+    this.shareListToggle();
   }
 
   scrollSpy() {
@@ -57,6 +58,13 @@ class Extra {
     } else {
       $('#go-to-top').fadeOut(250);
     }
+  }
+
+  // Toggle of share list
+  shareListToggle() {
+    $('.single-share-button').on('click', () => {
+      $('.single-share-list').toggleClass('active');
+    });
   }
 }
 

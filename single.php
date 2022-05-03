@@ -6,7 +6,23 @@
     <div class="container-fluid">
 
       <?php while (have_posts()) : the_post(); ?>
-        <div class="row flex-lg-row-reverse">
+        <div class="row">
+
+          <!-- Image of single -->
+          <div class="col-lg-8">
+
+            <!-- Single thumbnail -->
+            <div class="single-thumbnail">
+              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
+            </div>
+
+            <?php
+            // If comments are open or we have at least one comment, load up the comment template.
+            // if (comments_open() || get_comments_number()) :
+            //   comments_template();
+            // endif;
+            ?>
+          </div>
 
           <!-- Content of single -->
           <div class="col-lg-4">
@@ -39,22 +55,43 @@
               <?php the_content(); ?>
             </div>
 
-          </div>
-
-          <!-- Image of single -->
-          <div class="col-lg-8">
-
-            <!-- Single thumbnail -->
-            <div class="single-thumbnail">
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
+            <!-- Single share -->
+            <div class="single-share">
+              <!-- Single share button -->
+              <button class="button-no-style single-share-button"><i class="lni lni-share-alt"></i>اشتراک گذاری</button>
+              <!-- Single share list -->
+              <div class="single-share-list">
+                <a target="_blank" href="http://www.facebook.com/share.php?u=<?php echo get_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="اشتراک در فیس بوک"><i class="lni lni-facebook"></i></a>
+                <a target="_blank" href="http://twitter.com/share?text=<?php echo get_the_title(); ?>&url=<?php echo get_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="اشتراک در توئیتر"><i class="lni lni-twitter"></i></a>
+                <a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo get_permalink(); ?>&title=<?php get_the_title(); ?>" data-toggle="tooltip" data-placement="top" title="اشتراک در لینکدین"><i class="lni lni-linkedin"></i></a>
+                <a target="_blank" href="https://api.whatsapp.com/send?text=<?php the_title(); ?>:<?php the_permalink(); ?>" data-toggle="tooltip" data-placement="top" title="اشتراک در واتس آپ"><i class="lni lni-whatsapp"></i></a>
+              </div>
             </div>
 
             <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            // if (comments_open() || get_comments_number()) :
-            //   comments_template();
-            // endif;
-            ?>
+            $categories = get_the_category();
+            $separator = ' ';
+            $output = '';
+            if (!empty($categories)) : ?>
+              <!-- Single categories -->
+              <div class="single-categories">
+                <!-- Single categories icon -->
+                <div class="single-categories-icon"><i class="ti-folder"></i></div>
+                <!-- Single categories content -->
+                <div class="single-categories-content">
+                  <strong>دسته بندی</strong>
+                  <div class="single-categories-list">
+                    <?php
+                    foreach ($categories as $category) {
+                      $output .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" title="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . esc_html($category->name) . '</a>' . $separator;
+                    }
+                    echo trim($output, $separator);
+                    ?>
+                  </div>
+                </div>
+              </div>
+            <?php endif; ?>
+
           </div>
 
         </div>
