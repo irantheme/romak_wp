@@ -64,13 +64,34 @@
               <?php the_content(); ?>
             </div>
 
-            <!-- Single share -->
-            <div class="single-share">
+            <?php
+            $likeQuery = new WP_Query(array(
+              'post_type' => 'like',
+              'meta_query' => array(
+                array(
+                  'key' => 'liked_meta_value_key',
+                  'compare' => '=',
+                  'value' => get_the_ID()
+                )
+              )
+            ));
+            ?>
+
+            <!-- Single like share -->
+            <div class="single-like-share">
+              <!-- Single like button -->
+              <button class="like-button" data-like="<?php echo esc_html__($likeQuery->posts[0]->ID); ?>" data-post="<?php echo get_the_ID(); ?>" data-exists="">
+                <i class="lni lni-heart like-heart-no"></i>
+                <i class="lni lni-heart-filled like-heart-yes"></i>
+                <span>
+                  <cite class="text-heart-yes">پسند شده</cite><cite class="text-heart-no">می پسندید ؟</cite><em class="like-count"><?php echo esc_html__($likeQuery->found_posts); ?></em>
+                </span>
+              </button>
               <!-- Single share button -->
-              <button class="button-no-style single-share-button"><i class="lni lni-share-alt"></i>اشتراک گذاری</button>
+              <button id="button-share-toggle-list" class="button-no-style single-share-button"><i class="lni lni-share-alt"></i>اشتراک</button>
               <!-- Single share list -->
               <div class="single-share-list">
-                <a target="_blank" href="http://www.facebook.com/share.php?u=<?php echo get_permalink(); ?>"><i class="lni lni-facebook"></i></a>
+                <!-- <a target="_blank" href="http://www.facebook.com/share.php?u=<?php echo get_permalink(); ?>"><i class="lni lni-facebook"></i></a> -->
                 <a target="_blank" href="http://twitter.com/share?text=<?php echo get_the_title(); ?>&url=<?php echo get_permalink(); ?>"><i class="lni lni-twitter"></i></a>
                 <a target="_blank" href="https://t.me/share/url?url=<?php echo get_permalink(); ?>&title=<?php echo get_the_title(); ?>"><i class="lni lni-telegram"></i></a>
                 <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo get_the_title(); ?>:<?php the_permalink(); ?>"><i class="lni lni-whatsapp"></i></a>
@@ -120,10 +141,87 @@
           </div>
         </div>
 
-        <!-- Single related posts -->
-        <div class="single-related-posts">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab unde dolorum maiores neque, itaque possimus culpa voluptates debitis quam aut natus et. Laudantium, non maxime obcaecati recusandae sunt nemo pariatur.
-        </div>
+        <?php
+        $orig_post = $post;
+        global $post;
+        $related_category = get_the_category($post->ID);
+        if ($related_category) :
+          $category_ids = array();
+          foreach ($related_category as $individual_category) {
+            $category_ids[] = $individual_category->term_id;
+          }
+          $args = array(
+            'post_type' => 'post',
+            'category__in' => $category_ids,
+            'post__not_in' => array($post->ID),
+            'posts_per_page' => 4,
+            'ignore_sticky_posts' => 1
+          );
+          $related_query = new WP_Query($args);
+
+          if ($related_query->have_posts()) : ?>
+
+            <!-- Single related posts -->
+            <div class="single-related-posts">
+              <!-- Heading mode -->
+              <div class="heading-mode heading-mode-dark" data-aos="fade-down">
+                <h2>مطالب مرتبط</h2>
+              </div>
+              <div class="row">
+                <?php
+                while ($related_query->have_posts()) : $related_query->the_post(); ?>
+                  <!-- Item -->
+                  <div class="col-lg-3">
+                    <div class="single-related-item">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <!-- Post image -->
+                        <div class="single-related-image-space">
+                          <a href="<?php echo get_the_permalink(); ?>" class="single-related-image-link">
+                            <!-- Post thumbnail -->
+                            <div class="single-related-thumbnail-space">
+                              <img src="<?php the_post_thumbnail_url('large'); ?>" alt="تصویر مطلب">
+                            </div>
+                          </a>
+                        </div>
+                      <?php endif; ?>
+                      <!-- Holder -->
+                      <div class="single-related-content-space text-right">
+                        <!-- Heading -->
+                        <div class="single-related-heading-space">
+                          <!-- Date -->
+                          <span><i class="lni lni-calendar"></i><?php echo get_the_date('j F Y'); ?></span>
+                          <h2><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
+                        </div>
+                        <?php
+                        // Counter of like
+                        $likeCountRel = new WP_Query(array(
+                          'post_type' => 'like',
+                          'meta_query' => array(
+                            array(
+                              'key' => 'liked_meta_value_key',
+                              'compare' => '=',
+                              'value' => get_the_ID()
+                            )
+                          )
+                        ));
+                        ?>
+                        <!-- Comments & Likes -->
+                        <div class="single-related-list-options">
+                          <span><i class="lni lni-comments"></i><?php echo get_comments_number(); ?> دیدگاه</span>
+                          <span><i class="lni lni-heart"></i><?php echo esc_html__($likeCountRel->found_posts); ?> پسندشده</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endwhile; ?>
+              </div>
+            </div>
+        <?php
+          endif;
+        endif;
+        $post = $orig_post;
+        wp_reset_query();
+        ?>
       <?php endwhile; ?>
     </div>
   </div>

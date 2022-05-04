@@ -611,7 +611,6 @@ class Extra {
   setHeightMiniProfileAvatar() {
     let element = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.mini-profile .mini-profile-avatar img');
     let width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).width();
-    console.log(width);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).height(width);
   }
 
@@ -630,7 +629,7 @@ class Extra {
 
 
   shareListToggle() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.single-share-button').on('click', () => {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#button-share-toggle-list').on('click', () => {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.single-share-list').toggleClass('active');
     });
   }

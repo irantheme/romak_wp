@@ -43,7 +43,6 @@ class Extra {
   setHeightMiniProfileAvatar() {
     let element = $('.mini-profile .mini-profile-avatar img');
     let width = $(element).width();
-    console.log(width);
     $(element).height(width);
   }
 
@@ -62,7 +61,7 @@ class Extra {
 
   // Toggle of share list
   shareListToggle() {
-    $('.single-share-button').on('click', () => {
+    $('#button-share-toggle-list').on('click', () => {
       $('.single-share-list').toggleClass('active');
     });
   }

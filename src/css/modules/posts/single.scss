@@ -339,15 +339,102 @@ Blog content
   }
 }
 
-// Single share
-.single-share {
+// Single like share
+.single-like-share {
   display: flex;
   margin-bottom: 2rem;
+
+  // Like
+  .like-button {
+    margin: 0 0 0 0.5rem;
+    padding: 0;
+    background: $color-gray-100;
+    border: 0;
+    outline: 0;
+    color: $color-gray-900;
+    line-height: inherit;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+
+    &[data-exists=yes] {
+      & {
+        background: $color-gray-200;
+      }
+
+      .like-heart-no {
+        display: none !important;
+      }
+
+      .like-heart-yes {
+        display: flex !important;
+      }
+
+      .text-heart-no {
+        display: none !important;
+      }
+
+      .text-heart-yes {
+        display: flex !important;
+      }
+    }
+
+    .like-heart-no {
+      display: flex;
+    }
+
+    .like-heart-yes {
+      display: none;
+    }
+
+    .text-heart-no {
+      display: flex !important;
+    }
+
+    .text-heart-yes {
+      display: none !important;
+    }
+
+    &:hover {
+      background: $color-gray-200;
+    }
+
+    i {
+      padding: 0 1rem;
+      transition: 0.3s;
+      color: $color-primary;
+      background: $color-gray-200;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+    }
+
+    span {
+      padding-left: 1rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+      color: $color-dark;
+      display: flex;
+
+      cite {
+        font-style: normal;
+      }
+    }
+
+    .like-count {
+      font-style: normal;
+      font-size: inherit;
+      margin-right: 0.5rem;
+    }
+  }
 
   // Button share
   .single-share-button {
     margin: 0;
-    padding: 0.25rem 1.5rem;
+    padding: 0 1.5rem;
     background: $color-gray-100;
     font-size: 0.8rem;
     color: $color-gray-700;
@@ -420,7 +507,103 @@ Blog content
   }
 }
 
-// Pagination
+/*
+=====================================
+Single related posts
+=====================================
+*/
+
+.single-related-posts {
+  padding-top: 6rem;
+
+  .single-related-item {
+    margin-bottom: 1rem;
+  }
+
+  .single-related-image-space {
+    margin-bottom: 1rem;
+  }
+  
+  .single-related-thumbnail-space {
+    height: 10rem;
+    overflow: hidden;
+  
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      @include transition(all, 0.3s, ease-out);
+  
+      &:hover {
+        @include transform(scale(1.1) rotate(-2.5deg));
+        opacity: 0.9;
+      }
+    }
+
+    @media (max-width: 991px) {
+      height: 14rem;
+    }
+  }
+  
+  .single-related-content-space {
+    padding: 0;
+  }
+  
+  .single-related-heading-space {
+    margin-bottom: 0.5rem;
+  
+    span {
+      font-size: 0.7rem;
+      display: none;
+  
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  
+    h2 {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  
+  // Options
+  .single-related-list-options {
+    span {
+      cursor: default;
+      font-size: 0.7rem;
+      color: $color-gray-600;
+  
+      &:not(:last-child) {
+        margin-left: 1rem;
+      }
+  
+      i {
+        margin-left: 0.5rem;
+        color: $color-primary;
+        font-size: 0.8rem;
+        position: relative;
+        top: 2px;
+      }
+  
+      em {
+        margin-right: 0.5rem;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+
+
+/*
+=====================================
+Pagination
+=====================================
+*/
 .pagination {
   padding: 3rem 15px;
   display: flex;
@@ -445,166 +628,5 @@ Blog content
   span {
     background: $color-gray-800;
     color: $color-white;
-  }
-}
-
-/*
-=====================================
-Post box space
-=====================================
-*/
-
-// Related post
-
-.related-post {
-  padding-bottom: 30px;
-
-  .related-post-slider {
-    position: relative;
-  }
-
-  .swiper-slide {
-    height: 100%;
-  }
-}
-
-
-.post-box-space {
-  padding: 1rem;
-  background: $color-white;
-  height: 100%;
-  width: 100%;
-}
-
-.post-image-space {
-  margin-bottom: 1rem;
-}
-
-.post-thumbnail-space {
-  height: 14rem;
-  overflow: hidden;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    @include transition(all, 0.3s, ease-out);
-
-    &:hover {
-      @include transform(scale(1.1) rotate(-2.5deg));
-      opacity: 0.9;
-    }
-  }
-}
-
-.post-content-space {
-  padding: 0;
-}
-
-.post-heading-space {
-  margin-bottom: 0.5rem;
-
-  span {
-    font-size: 0.7rem;
-    display: none;
-
-    i {
-      margin-left: 0.5rem;
-    }
-  }
-
-  h2 {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
-/*
-=====================================
-Post little box
-=====================================
-*/
-
-.post-box-little {
-  background: $color-gray-900;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  height: 100%;
-  display: block;
-
-  &:hover {
-    background: $color-gray-800;
-
-    .post-thumbnail-little {
-      img {
-        opacity: 0.75;
-      }
-    }
-  }
-
-  .post-thumbnail-little {
-    width: 100%;
-    height: 9rem;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      @include transition(all, 0.3s, ease-out);
-    }
-  }
-
-  // Heading
-  .post-heading-little {
-    margin-bottom: 0.5rem;
-
-    span {
-      font-size: 0.7rem;
-      color: $color-gray-300;
-
-      i {
-        margin-left: 0.5rem;
-        color: $color-primary;
-      }
-    }
-
-    h3 {
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-      color: $color-gray-200;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
-  // Options
-  .post-options-little {
-    span {
-      cursor: default;
-      font-size: 0.7rem;
-      color: $color-gray-500;
-
-      &:not(:last-child) {
-        margin-left: 1rem;
-      }
-
-      i {
-        margin-left: 0.5rem;
-        color: $color-primary;
-        font-size: 0.8rem;
-        position: relative;
-        top: 2px;
-      }
-
-      em {
-        margin-right: 0.5rem;
-        font-style: normal;
-      }
-    }
   }
 }

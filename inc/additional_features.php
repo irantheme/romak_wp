@@ -34,7 +34,7 @@ if (!function_exists('irantheme_include_features')) {
         'quote',
         // 'status',
         'video',
-        'audio',
+        // 'audio',
         // 'chat',
       )
     );
@@ -54,32 +54,6 @@ if (!function_exists('irantheme_include_features')) {
     );
   }
   add_action('after_setup_theme', 'irantheme_include_features');
-}
-
-
-
-if (!function_exists('irantheme_register_sidebar_widgets')) {
-  /**
-   * Initialize of sidebars
-   * @return void
-   */
-  function irantheme_register_sidebar_widgets()
-  {
-    // Down of header
-    register_sidebar(array(
-      'name'           => 'سایدبار',
-      'id'             => 'sidebar-widget',
-      'description'    => 'سایدبار قرار گرفته در کنار مطالب سایت',
-      'class'          => '',
-      'before_widget'  => '<aside class="box-holder">',
-      'after_widget'   => '</aside>',
-      'before_title'   => '<div class="box-title">',
-      'after_title'    => '</div>',
-      'before_sidebar' => '<section id="sidebar">',
-      'after_sidebar'  => '</section>',
-    ));
-  }
-  add_action('widgets_init', 'irantheme_register_sidebar_widgets');
 }
 
 
@@ -195,7 +169,7 @@ if (!function_exists('irantheme_our_login_css')) {
    */
   function irantheme_our_login_css()
   {
-    wp_enqueue_style('university_main_styles', get_stylesheet_uri());
+    wp_enqueue_style('irantheme_admin_main_styles', get_stylesheet_uri());
   }
   add_action('login_enqueue_scripts', 'irantheme_our_login_css');
 }
@@ -211,56 +185,4 @@ if (!function_exists('irantheme_our_login_title')) {
     return get_bloginfo('name');
   }
   add_filter('login_headertext', 'irantheme_our_login_title');
-}
-
-
-if (!function_exists('irantheme_add_custom_post_types_namespace')) {
-  /**
-   * Add custom post type to archive & namespace
-   * ###########################################################
-   * @return void
-   * @param $query
-   */
-  function irantheme_add_custom_post_types_namespace($query)
-  {
-    // if (is_single() && get_post_type() == 'project' && $query->is_main_query()) {
-    //   $query->set('post_type', array(
-    //     'post', 'project'
-    //   ));
-    //   return $query;
-    // }
-
-    // if (is_category() || is_tag() && $query->is_main_query()) {
-    //   $query->set('post_type', array(
-    //     'post', 'project'
-    //   ));
-    //   return $query;
-    // }
-
-    if (!is_admin() && $query->is_main_query()) {
-      // Not a query for an admin page.
-      // It's the main query for a front end page of your site.
-
-      if (is_single() && get_post_type() == 'project') {
-        // It's the main query for an archive page.
-
-        // Let's change the query for archive pages.
-        $query->set('post_type', array(
-          'post', 'project'
-        ));
-        return $query;
-      }
-
-      if (is_category() || is_tag() || is_author()) {
-        // It's the main query for a category archive.
-
-        // Let's change the query for category archives.
-        $query->set('post_type', array(
-          'post', 'project'
-        ));
-        return $query;
-      }
-    }
-  }
-  add_filter('pre_get_posts', 'irantheme_add_custom_post_types_namespace');
 }
