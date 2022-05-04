@@ -124,6 +124,36 @@ Blog content
   }
 }
 
+// Single author
+.single-author {
+  display: flex;
+  margin-bottom: 1rem;
+
+  .single-author-img {
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+  }
+
+  .single-author-info {
+    padding-top: 1rem;
+    padding-right: 1rem;
+
+    h4 {
+      font-size: 0.9rem;
+      color: $color-gray-800;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $color-gray-600;
+    }
+  }
+}
+
 // Single text
 .single-text {
   font-size: 0.8rem;
@@ -357,6 +387,34 @@ Blog content
 
       &:hover {
         color: $color-gray-900;
+      }
+    }
+  }
+}
+
+// Single tags
+.single-tags {
+  .single-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 0.8rem;
+      background: $color-gray-100;
+      padding: 0 0.5rem;
+      color: $color-gray-600;
+      margin-bottom: 0.5rem;
+
+      i {
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        color: $color-gray-900;
+      }
+
+      &:not(:last-child) {
+        margin-left: 0.5rem;
       }
     }
   }
