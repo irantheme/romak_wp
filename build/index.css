@@ -1234,6 +1234,23 @@ Button simple
   background: inherit;
 }
 
+.button-block {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0088cc;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.button-block:hover {
+  background: #006da4;
+  color: #fff;
+}
+.button-block span {
+  margin-right: 0.5rem;
+}
+
 /* Forms ---------------------------------------- */
 input[type=submit],
 input[type=reset],
@@ -3170,6 +3187,9 @@ Blog content
   color: #212529;
 }
 
+.single-tags {
+  margin-bottom: 1rem;
+}
 .single-tags .single-tags-list {
   display: flex;
   flex-wrap: wrap;

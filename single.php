@@ -138,6 +138,10 @@
               </div>
             <?php endif; ?>
 
+            <!-- Toggle of comments -->
+            <div class="toggle-comments">
+              <button id="button-comments-toggle-list" class="button-no-style button-block"><i class="lni lni-comment"></i>مشاهده نظرات<span>(<?php echo get_comments_number(); ?> نظر)</span></button>
+            </div>
           </div>
         </div>
 
@@ -226,5 +230,10 @@
     </div>
   </div>
 </section>
+
+<?php
+// Get template part of comments
+get_template_part('/template-parts/comments/comment', 'fixed');
+?>
 
 <?php get_footer(); ?>
