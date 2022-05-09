@@ -593,17 +593,17 @@ class Extra {
   commentsListOptions() {
     // Show comments list
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#button-comments-show-list').on('click', () => {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeIn(250);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed-container').fadeIn(250);
     }); // Hide comments list
 
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#close-comments-fixed').on('click', () => {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeOut(250);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed-container').fadeOut(250);
     }); // Get url of current page for respond
 
     let url = window.location.href;
 
     if (url.indexOf('respond') != -1) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeIn(250);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed-container').fadeIn(250);
     }
   }
 

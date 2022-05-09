@@ -1257,7 +1257,7 @@ input[type=reset],
 input[type=button],
 button,
 .button {
-  background-color: #6c757d;
+  background-color: #0088cc;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -1283,7 +1283,7 @@ input[type=reset]:hover,
 input[type=button]:hover,
 button:hover,
 .button:hover {
-  background: #495057;
+  background: #006da4;
   color: #fff;
 }
 input[type=submit]:focus,
@@ -1345,7 +1345,7 @@ textarea:focus {
 
 textarea {
   width: 100% !important;
-  height: 20rem;
+  height: 15rem;
   padding: 0.75rem 1rem;
 }
 
@@ -3287,6 +3287,17 @@ Single related posts
 Comments fixed
 =====================================
 */
+#comments-fixed-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 80, 87, 0.5);
+  display: none;
+}
+
 #comments-fixed {
   position: fixed;
   top: 50%;
@@ -3296,9 +3307,8 @@ Comments fixed
   background: #fff;
   border-right: 5px solid #0088cc;
   box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.06);
-  z-index: 4;
+  z-index: 5;
   overflow: auto;
-  display: none;
   transform: translate(50%, -50%);
 }
 @media screen and (max-width: 991px) {
@@ -3689,16 +3699,16 @@ Comments list
   padding-bottom: 1rem;
 }
 .comments-list .comment .comment-avatar {
-  width: 5rem;
+  width: 4rem;
   float: right;
 }
 .comments-list .comment .comment-avatar img {
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   border-radius: 50%;
 }
 .comments-list .comment .comment-content {
-  margin-right: 7rem;
+  margin-right: 5rem;
   position: relative;
 }
 .comments-list .comment .comment-content .comment-heading {
@@ -3738,6 +3748,9 @@ Comments list
 }
 .comments-list > .children {
   padding-right: 2rem;
+}
+.comments-list > .children .comment {
+  border-color: #0088cc;
 }
 
 /*

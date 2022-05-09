@@ -22,18 +22,18 @@ class Extra {
   commentsListOptions() {
     // Show comments list
     $('#button-comments-show-list').on('click', () => {
-      $('#comments-fixed').fadeIn(250);
+      $('#comments-fixed-container').fadeIn(250);
     });
 
     // Hide comments list
     $('#close-comments-fixed').on('click', () => {
-      $('#comments-fixed').fadeOut(250);
+      $('#comments-fixed-container').fadeOut(250);
     });
 
     // Get url of current page for respond
     let url = window.location.href;
     if (url.indexOf('respond') != -1) {
-      $('#comments-fixed').fadeIn(250);
+      $('#comments-fixed-container').fadeIn(250);
     }
   }
 
