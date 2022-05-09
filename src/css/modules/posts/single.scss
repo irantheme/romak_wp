@@ -142,9 +142,11 @@ Blog content
     padding-right: 1rem;
 
     h4 {
-      font-size: 0.9rem;
-      color: $color-gray-800;
-      margin-bottom: 0;
+      a {
+        font-size: 0.9rem;
+        color: $color-gray-800;
+        margin-bottom: 0;
+      }
     }
 
     p {
@@ -283,6 +285,10 @@ Blog content
   // Gallery style
   .gallery {
     .gallery-item {
+      display: block !important;
+      float: none !important;
+      width: 100% !important;
+
       .gallery-icon {
         a {
           display: block;

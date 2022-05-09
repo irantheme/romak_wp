@@ -13,13 +13,6 @@
             <div class="single-thumbnail">
               <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
             </div>
-
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            // if (comments_open() || get_comments_number()) :
-            //   comments_template();
-            // endif;
-            ?>
           </div>
 
           <!-- Content of single -->
@@ -54,7 +47,7 @@
                 <?php echo get_avatar(get_the_author_meta('ID'), 100); ?>
               </div>
               <div class="single-author-info">
-                <h4><?php the_author_meta('display_name'); ?></h4>
+                <h4><?php echo get_the_author_posts_link(); ?></h4>
                 <p><?php the_author_meta('nickname'); ?></p>
               </div>
             </div>

@@ -2922,7 +2922,7 @@ Blog content
   padding-top: 1rem;
   padding-right: 1rem;
 }
-.single-author .single-author-info h4 {
+.single-author .single-author-info h4 a {
   font-size: 0.9rem;
   color: #343a40;
   margin-bottom: 0;
@@ -3034,6 +3034,11 @@ Blog content
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #1C2023;
+}
+.single-text .gallery .gallery-item {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
 }
 .single-text .gallery .gallery-item .gallery-icon a {
   display: block;
@@ -3822,7 +3827,6 @@ Load more
 .gallery-item {
   margin: 0 !important;
   text-align: center;
-  height: 20rem;
   width: 49% !important;
 }
 .gallery-icon {
