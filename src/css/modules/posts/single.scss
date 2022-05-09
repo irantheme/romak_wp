@@ -405,7 +405,6 @@ Blog content
       padding: 0 1rem;
       transition: 0.3s;
       color: $color-primary;
-      background: $color-gray-200;
       display: flex;
       align-items: center;
       align-self: stretch;
@@ -413,8 +412,8 @@ Blog content
 
     span {
       padding-left: 1rem;
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      // margin-left: 0.5rem;
+      // margin-right: 0.5rem;
       font-size: 0.8rem;
       color: $color-dark;
       display: flex;
@@ -599,6 +598,68 @@ Single related posts
   }
 }
 
+
+/*
+=====================================
+Comments fixed
+=====================================
+*/
+
+#comments-fixed {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 800px;
+  height: 90vh;
+  background: $color-white;
+  border-right: 5px solid $color-primary;
+  box-shadow: 10px 10px 20px 2px rgb(0 0 0 / 6%);
+  z-index: 4;
+  overflow: auto;
+  display: none;
+  @include transform(translate(50%, -50%));
+
+  @media screen and (max-width: 991px) {
+    width: 90vw;
+    height: 90vh;
+  }
+
+  // Comments title
+  .comments-title {
+    background: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid $color-gray-200;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    h4 {
+      font-size: 0.9rem;
+      color: $color-gray-800;
+      padding: 0 1rem;
+    }
+
+    #close-comments-fixed {
+      font-size: 0.9rem;
+      color: $color-gray-800;
+      padding: 0 1.5rem;
+
+      &:hover {
+        background: $color-gray-200;
+      }
+    }
+  }
+
+  // Comments fixed list
+  #comments-fixed-list {
+    padding: 2rem;
+  }
+}
 
 
 /*

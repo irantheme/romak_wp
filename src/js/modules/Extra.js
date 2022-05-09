@@ -15,6 +15,26 @@ class Extra {
     $(window).resize(this.setHeightMiniProfileAvatar);
     $(window).scroll(this.hideGoToTop);
     this.shareListToggle();
+    this.commentsListOptions();
+  }
+
+  // Options of comments list
+  commentsListOptions() {
+    // Show comments list
+    $('#button-comments-show-list').on('click', () => {
+      $('#comments-fixed').fadeIn(250);
+    });
+
+    // Hide comments list
+    $('#close-comments-fixed').on('click', () => {
+      $('#comments-fixed').fadeOut(250);
+    });
+
+    // Get url of current page for respond
+    let url = window.location.href;
+    if (url.indexOf('respond') != -1) {
+      $('#comments-fixed').fadeIn(250);
+    }
   }
 
   scrollSpy() {

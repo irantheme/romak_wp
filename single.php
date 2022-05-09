@@ -140,7 +140,7 @@
 
             <!-- Toggle of comments -->
             <div class="toggle-comments">
-              <button id="button-comments-toggle-list" class="button-no-style button-block"><i class="lni lni-comment"></i>مشاهده نظرات<span>(<?php echo get_comments_number(); ?> نظر)</span></button>
+              <button id="button-comments-show-list" class="button-no-style button-block"><i class="lni lni-comment"></i>مشاهده نظرات<span>(<?php echo get_comments_number(); ?> نظر)</span></button>
             </div>
           </div>
         </div>

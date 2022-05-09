@@ -18,7 +18,7 @@ if (post_password_required())
   return;
 ?>
 
-<div id="comments">
+<div id="comments-fixed-list">
 
   <!-- Comment form -->
   <div class="post-box">

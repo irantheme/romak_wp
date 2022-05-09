@@ -170,7 +170,7 @@ Button simple
   color: $color-white;
   font-size: 0.8rem;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     background: $color-secondary;
     color: $color-white;
   }

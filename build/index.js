@@ -586,6 +586,25 @@ class Extra {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(this.setHeightMiniProfileAvatar);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(this.hideGoToTop);
     this.shareListToggle();
+    this.commentsListOptions();
+  } // Options of comments list
+
+
+  commentsListOptions() {
+    // Show comments list
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#button-comments-show-list').on('click', () => {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeIn(250);
+    }); // Hide comments list
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#close-comments-fixed').on('click', () => {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeOut(250);
+    }); // Get url of current page for respond
+
+    let url = window.location.href;
+
+    if (url.indexOf('respond') != -1) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#comments-fixed').fadeIn(250);
+    }
   }
 
   scrollSpy() {
