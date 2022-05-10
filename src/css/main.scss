@@ -12,22 +12,7 @@
 
 // Components
 @import 'modules/components/mini-profile';
-
 @import 'modules/components/extra';
-@import 'modules/components/header-blog';
-@import 'modules/components/header-blog';
-@import 'modules/components/author-profile';
-@import 'modules/components/about';
-@import 'modules/components/additional-styles';
-@import 'modules/components/footer-blog';
-@import 'modules/components/blocks';
-@import 'modules/components/information';
-@import 'modules/components/author-post-single';
-
-// Content
-@import 'modules/content/latest-blog-posts';
-@import 'modules/content/categories';
-@import 'modules/content/features';
 
 // Headers
 @import 'modules/headers/header-front';
@@ -39,6 +24,7 @@
 @import 'modules/posts/projects';
 @import 'modules/posts/partners';
 @import 'modules/posts/single';
+@import 'modules/posts/archive';
 
 // Contacts
 @import 'modules/contacts/contact-dark-simple';

@@ -9,10 +9,12 @@
 
           <!-- Image of single -->
           <div class="col-lg-8" data-aos="fade-left">
-            <!-- Single thumbnail -->
-            <div class="single-thumbnail">
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
-            </div>
+            <?php if (has_post_thumbnail()) : ?>
+              <!-- Single thumbnail -->
+              <div class="single-thumbnail">
+                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
+              </div>
+            <?php endif; ?>
           </div>
 
           <!-- Content of single -->
@@ -158,8 +160,8 @@
 
           if ($related_query->have_posts()) : ?>
 
-            <!-- Single related posts -->
-            <div class="single-related-posts">
+            <!-- Single style posts -->
+            <div class="box-style-posts">
               <!-- Heading mode -->
               <div class="heading-mode heading-mode-dark" data-aos="fade-down">
                 <h2>مطالب مرتبط</h2>
@@ -169,22 +171,22 @@
                 while ($related_query->have_posts()) : $related_query->the_post(); ?>
                   <!-- Item -->
                   <div class="col-lg-3">
-                    <div class="single-related-item">
+                    <div class="box-style-item">
                       <?php if (has_post_thumbnail()) : ?>
                         <!-- Post image -->
-                        <div class="single-related-image-space">
-                          <a href="<?php echo get_the_permalink(); ?>" class="single-related-image-link">
+                        <div class="box-style-image-space">
+                          <a href="<?php echo get_the_permalink(); ?>" class="box-style-image-link">
                             <!-- Post thumbnail -->
-                            <div class="single-related-thumbnail-space">
+                            <div class="box-style-thumbnail-space">
                               <img src="<?php the_post_thumbnail_url('large'); ?>" alt="تصویر مطلب">
                             </div>
                           </a>
                         </div>
                       <?php endif; ?>
                       <!-- Holder -->
-                      <div class="single-related-content-space text-right">
+                      <div class="box-style-content-space text-right">
                         <!-- Heading -->
-                        <div class="single-related-heading-space">
+                        <div class="box-style-heading-space">
                           <!-- Date -->
                           <span><i class="lni lni-calendar"></i><?php echo get_the_date('j F Y'); ?></span>
                           <h2><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
@@ -203,7 +205,7 @@
                         ));
                         ?>
                         <!-- Comments & Likes -->
-                        <div class="single-related-list-options">
+                        <div class="box-style-list-options">
                           <span><i class="lni lni-comments"></i><?php echo get_comments_number(); ?> دیدگاه</span>
                           <span><i class="lni lni-heart"></i><?php echo esc_html__($likeCountRel->found_posts); ?> پسندشده</span>
                         </div>

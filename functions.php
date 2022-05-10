@@ -6,8 +6,6 @@ require get_theme_file_path('/inc/source_files.php');
 require get_theme_file_path('/inc/custom_admin_settings.php');
 // Adding additional & features
 require get_theme_file_path('/inc/additional_features.php');
-// Adding breadcrumbs
-require get_theme_file_path('/inc/breadcrumbs.php');
 // Adding register post route
 require get_theme_file_path('/inc/post_route.php');
 // Adding register search route

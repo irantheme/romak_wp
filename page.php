@@ -4,34 +4,30 @@
 <section id="blog-content">
   <div class="container-holder">
     <div class="container-fluid">
-      <div class="row flex-lg-row-reverse">
-        <div class="col-lg-8">
+      <?php while (have_posts()) : the_post(); ?>
+        <div class="row">
 
-          <?php while (have_posts()) : the_post(); ?>
+          <?php if (has_post_thumbnail()) : ?>
+            <!-- Single thumbnail -->
+            <div class="single-thumbnail">
+              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="تصویر مطلب">
+            </div>
+          <?php endif; ?>
 
-            <?php
-            // Get template part of single post
-            get_template_part('/template-parts/content/content', 'single-post');
-            ?>
+          <!-- Single heading -->
+          <div class="single-heading">
+            <span><i class="lni lni-calendar"></i><?php echo get_the_date('j F Y'); ?></span>
+            <h1><?php the_title(); ?></h1>
+          </div>
 
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number()) :
-              comments_template();
-            endif;
-            ?>
-          <?php endwhile; ?>
-
+          <!-- Single text -->
+          <div class="single-text">
+            <?php the_content(); ?>
+          </div>
         </div>
-
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-          <?php get_sidebar(); ?>
-        </div>
-
-      </div>
-
     </div>
+
+  <?php endwhile; ?>
   </div>
 </section>
 
