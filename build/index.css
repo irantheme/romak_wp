@@ -2156,6 +2156,7 @@ Blog content
 
 .single-like-share {
   display: flex;
+  height: 3rem;
   margin-bottom: 2rem;
   width: 100%;
 }
@@ -2294,76 +2295,76 @@ Blog content
 Single style posts
 =====================================
 */
-.box-style-posts {
+.post-box-style {
   padding-top: 6rem;
 }
-.box-style-posts .box-style-item {
+.post-box-style .post-box-item {
   margin-bottom: 2rem;
 }
-.box-style-posts .box-style-image-space {
+.post-box-style .post-box-image-space {
   margin-bottom: 1rem;
 }
-.box-style-posts .box-style-thumbnail-space {
+.post-box-style .post-box-thumbnail-space {
   height: 12rem;
   overflow: hidden;
 }
-.box-style-posts .box-style-thumbnail-space img {
+.post-box-style .post-box-thumbnail-space img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.3s ease-out;
 }
-.box-style-posts .box-style-thumbnail-space img:hover {
+.post-box-style .post-box-thumbnail-space img:hover {
   transform: scale(1.1) rotate(-2.5deg);
   opacity: 0.9;
 }
 @media (max-width: 1199px) {
-  .box-style-posts .box-style-thumbnail-space {
+  .post-box-style .post-box-thumbnail-space {
     height: 8rem;
   }
 }
 @media (max-width: 991px) {
-  .box-style-posts .box-style-thumbnail-space {
+  .post-box-style .post-box-thumbnail-space {
     height: 20rem;
   }
 }
-.box-style-posts .box-style-content-space {
+.post-box-style .post-box-content-space {
   padding: 0;
 }
-.box-style-posts .box-style-heading-space {
+.post-box-style .post-box-heading-space {
   margin-bottom: 0.5rem;
 }
-.box-style-posts .box-style-heading-space span {
+.post-box-style .post-box-heading-space span {
   font-size: 0.7rem;
   display: none;
 }
-.box-style-posts .box-style-heading-space span i {
+.post-box-style .post-box-heading-space span i {
   margin-left: 0.5rem;
 }
-.box-style-posts .box-style-heading-space h2 {
+.post-box-style .post-box-heading-space h2 {
   font-size: 0.9rem;
   line-height: 1.4rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.box-style-posts .box-style-list-options span {
+.post-box-style .post-box-list-options span {
   cursor: default;
   font-size: 0.7rem;
   color: #6c757d;
 }
-.box-style-posts .box-style-list-options span:not(:last-child) {
+.post-box-style .post-box-list-options span:not(:last-child) {
   margin-left: 1rem;
 }
-.box-style-posts .box-style-list-options span i {
+.post-box-style .post-box-list-options span i {
   margin-left: 0.5rem;
   color: #0088cc;
   font-size: 0.8rem;
   position: relative;
   top: 2px;
 }
-.box-style-posts .box-style-list-options span em {
+.post-box-style .post-box-list-options span em {
   margin-right: 0.5rem;
   font-style: normal;
 }

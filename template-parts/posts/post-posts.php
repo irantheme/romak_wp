@@ -1,9 +1,9 @@
 <?php
-$front_projects_post = new WP_Query(array(
+$query_posts = new WP_Query(array(
   'post_type' => 'post'
 ));
 ?>
-<?php if ($front_projects_post->have_posts()) : ?>
+<?php if ($query_posts->have_posts()) : ?>
   <!-- Projects -->
   <section id="projects">
     <div class="container-holder">
@@ -21,7 +21,7 @@ $front_projects_post = new WP_Query(array(
             <!-- Grid masonry -->
             <div class="grid-masonry">
               <div class="grid-sizer"></div>
-              <?php while ($front_projects_post->have_posts()) : $front_projects_post->the_post();
+              <?php while ($query_posts->have_posts()) : $query_posts->the_post();
                 // Get parent id category of post
                 $category = get_the_category();
                 // $category_parent_list = array();
@@ -89,7 +89,7 @@ $front_projects_post = new WP_Query(array(
           </div>
         </div>
 
-        <?php if ($front_projects_post->found_posts > $front_projects_post->post_count) : ?>
+        <?php if ($query_posts->found_posts > $query_posts->post_count) : ?>
           <!-- Load more -->
           <div class="load-more">
             <button id="loading-projects" class="button-load">

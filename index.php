@@ -1,45 +1,43 @@
 <?php get_header(); ?>
 
-<!-- Blog content -->
-<section id="blog-content">
+<!-- Archive -->
+<section id="archive">
   <div class="container-holder">
     <div class="container-fluid">
-      <div class="row flex-lg-row-reverse">
-        <div class="col-lg-8 px-0">
 
-          <?php if (have_posts()) : ?>
-            <!-- All posts -->
-            <main class="grid-masonry">
-              <div class="grid-sizer"></div>
-              <?php while (have_posts()) : the_post(); ?>
+      <?php
+      if (have_posts()) : ?>
+
+        <!-- Box style style -->
+        <div class="post-box-style">
+          <!-- Heading mode -->
+          <div class="heading-mode heading-mode-dark" data-aos="fade-down">
+            <h2><?php echo get_the_archive_title(); ?></h2>
+          </div>
+          <div class="row">
+            <?php
+            while (have_posts()) : the_post(); ?>
+              <!-- Item -->
+              <div class="col-lg-3" data-aos="fade-down">
 
                 <?php
-                // Get template part of post
-                get_template_part('/template-parts/content/content', 'post');
+                // Get template part of box
+                get_template_part('/template-parts/posts/post', 'box');
                 ?>
 
-              <?php endwhile; ?>
-            </main>
-          <?php endif; ?>
-
-          <?php if (paginate_links()) : ?>
-            <!-- Pagination -->
-            <div class="pagination">
-              <?php echo paginate_links(array(
-                'prev_text' => 'صفحه قبل',
-                'next_text' => 'صفحه بعد'
-              )); ?>
-            </div>
-          <?php endif; ?>
-
+              </div>
+            <?php endwhile; ?>
+          </div>
         </div>
+      <?php
+      endif;
+      ?>
 
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-          <?php get_sidebar(); ?>
-        </div>
+      <?php
+      // Get template part of pagination
+      get_template_part('/template-parts/posts/post', 'pagination');
+      ?>
 
-      </div>
     </div>
   </div>
 </section>

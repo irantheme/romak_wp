@@ -316,6 +316,7 @@ Blog content
 // Single like share
 .single-like-share {
   display: flex;
+  height: 3rem;
   margin-bottom: 2rem;
   width: 100%;
 
@@ -489,18 +490,18 @@ Single style posts
 =====================================
 */
 
-.box-style-posts {
+.post-box-style {
   padding-top: 6rem;
 
-  .box-style-item {
+  .post-box-item {
     margin-bottom: 2rem;
   }
 
-  .box-style-image-space {
+  .post-box-image-space {
     margin-bottom: 1rem;
   }
   
-  .box-style-thumbnail-space {
+  .post-box-thumbnail-space {
     height: 12rem;
     overflow: hidden;
   
@@ -525,11 +526,11 @@ Single style posts
     }
   }
   
-  .box-style-content-space {
+  .post-box-content-space {
     padding: 0;
   }
   
-  .box-style-heading-space {
+  .post-box-heading-space {
     margin-bottom: 0.5rem;
   
     span {
@@ -551,7 +552,7 @@ Single style posts
   }
   
   // Options
-  .box-style-list-options {
+  .post-box-list-options {
     span {
       cursor: default;
       font-size: 0.7rem;
