@@ -8,8 +8,6 @@ require get_theme_file_path('/inc/custom_admin_settings.php');
 require get_theme_file_path('/inc/additional_features.php');
 // Adding register post route
 require get_theme_file_path('/inc/post_route.php');
-// Adding register search route
-require get_theme_file_path('/inc/search_route.php');
 // Adding register like route
 require get_theme_file_path('/inc/like_route.php');
 // Adding register post types
