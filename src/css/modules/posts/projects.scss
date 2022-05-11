@@ -44,7 +44,7 @@ Projects
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: $color-dark-transparent-low;
+        background: $color-primary-transparent;
         opacity: 0;
         visibility: hidden;
         @include transition(all, 0.4s, cubic-bezier(0.785, 0.135, 0.15, 0.86));
@@ -55,6 +55,7 @@ Projects
 
           h2 {
             font-size: 1.1rem;
+            line-height: 1.6rem;
             font-weight: bold;
             color: $color-white;
             opacity: 0;
