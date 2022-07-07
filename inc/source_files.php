@@ -29,8 +29,6 @@ if (!function_exists('irantheme_add_theme_sources')) {
     wp_enqueue_style('fonts-irantheme-css', get_template_directory_uri() . '/assets/css/fonts.css');
     // Adding Line icons css
     wp_enqueue_style('line-icons-irantheme-css', get_template_directory_uri() . '/assets/css/lineicons.css');
-    // Adding Themify icons css
-    wp_enqueue_style('themify-icons-irantheme-css', get_template_directory_uri() . '/assets/css/themify-icons.css');
     // Adding bootstrap css
     wp_enqueue_style('bootstrap-irantheme-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
     // Adding swiper css

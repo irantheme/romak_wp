@@ -118,16 +118,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_modules_Search__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/modules/Search */ "./src/js/modules/Search.js");
 /* harmony import */ var _js_modules_Navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/modules/Navigation */ "./src/js/modules/Navigation.js");
 /* harmony import */ var _js_modules_LoadPosts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/modules/LoadPosts */ "./src/js/modules/LoadPosts.js");
-/* harmony import */ var _js_modules_CategoryTrigger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/modules/CategoryTrigger */ "./src/js/modules/CategoryTrigger.js");
-/* harmony import */ var _js_modules_Like__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/modules/Like */ "./src/js/modules/Like.js");
-/* harmony import */ var _js_modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/modules/FullscreenSlider */ "./src/js/modules/FullscreenSlider.js");
+/* harmony import */ var _js_modules_Like__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/modules/Like */ "./src/js/modules/Like.js");
+/* harmony import */ var _js_modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/modules/FullscreenSlider */ "./src/js/modules/FullscreenSlider.js");
  // Libs
 
 
 
 
  // Modules
-
 
 
 
@@ -143,10 +141,9 @@ let search = new _js_modules_Search__WEBPACK_IMPORTED_MODULE_6__["default"]();
 let loadPosts = new _js_modules_LoadPosts__WEBPACK_IMPORTED_MODULE_8__["default"]();
 let masonryJs = new _js_libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__["default"]();
 let swiper = new _js_libs_SwiperJs__WEBPACK_IMPORTED_MODULE_2__["default"]();
-let categoryTrigger = new _js_modules_CategoryTrigger__WEBPACK_IMPORTED_MODULE_9__["default"]();
-let like = new _js_modules_Like__WEBPACK_IMPORTED_MODULE_10__["default"]();
+let like = new _js_modules_Like__WEBPACK_IMPORTED_MODULE_9__["default"]();
 let jarallax = new _js_libs_JarallaxJs__WEBPACK_IMPORTED_MODULE_3__["default"]();
-let fullscreenSlider = new _js_modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_11__["default"]();
+let fullscreenSlider = new _js_modules_FullscreenSlider__WEBPACK_IMPORTED_MODULE_10__["default"]();
 let aosJs = new _js_libs_AosJs__WEBPACK_IMPORTED_MODULE_4__["default"]();
 
 /***/ }),
@@ -474,86 +471,6 @@ class SwiperJs {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SwiperJs);
-
-/***/ }),
-
-/***/ "./src/js/modules/CategoryTrigger.js":
-/*!*******************************************!*\
-  !*** ./src/js/modules/CategoryTrigger.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../libs/MasonryJs */ "./src/js/libs/MasonryJs.js");
-
-
-/* ===============================================================
-  Category Trigger (Toggle of posts)
-=============================================================== */
-
-class CategoryTrigger {
-  constructor() {
-    let masonryJs = new _libs_MasonryJs__WEBPACK_IMPORTED_MODULE_1__["default"](); // Back to all posts
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#all-categories').on('click', function () {
-      // Remove all active list category
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.categories ul li span').removeClass('active'); // Add active to clicked category
-
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder[data-cate]').show();
-      masonryJs.masonryInit();
-    }); // Categorize and alignment posts
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.categories ul li span:not(#all-categories)').on('click', function () {
-      // Remove all active list category
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.categories ul li span').removeClass('active'); // Add active to clicked category
-
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('active'); // Remove all posts
-
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder[data-cate]').hide(); // Get current category data
-
-      var baseData = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('cate');
-      var posts = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#projects .post-holder[data-cate]');
-      let dataFiltered;
-      console.log(posts); // Loop from posts
-
-      for (let i = 0; i < posts.length; i++) {
-        // Split data post
-        let dataPost = jquery__WEBPACK_IMPORTED_MODULE_0___default()(posts[i]).attr('data-cate').split(','); // Remove last additional index array
-
-        dataFiltered = dataPost.filter(function (el) {
-          return el != '';
-        }); // Check duplicated data and destroy
-
-        let uniqueData = [];
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.each(dataFiltered, function (i, el) {
-          if (jquery__WEBPACK_IMPORTED_MODULE_0___default.a.inArray(el, uniqueData) === -1) uniqueData.push(el);
-        }); // Loop from data filtered post
-
-        for (let j = 0; j < uniqueData.length; j++) {
-          // Check base data (main) with post data
-          if (uniqueData[j] == baseData) {
-            // Display same cate post
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(posts[i]).show();
-            break;
-          }
-        }
-      }
-
-      masonryJs.masonryInit();
-    });
-    this.events();
-  }
-
-  events() {}
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (CategoryTrigger);
 
 /***/ }),
 

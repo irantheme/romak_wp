@@ -11,7 +11,6 @@ import Extra from './js/modules/Extra';
 import Search from './js/modules/Search';
 import Navigation from './js/modules/Navigation';
 import LoadPosts from './js/modules/LoadPosts';
-import CategoryTrigger from './js/modules/CategoryTrigger';
 import Like from './js/modules/Like';
 
 // Hooks
@@ -24,7 +23,6 @@ let search = new Search();
 let loadPosts = new LoadPosts();
 let masonryJs = new MasonryJs();
 let swiper = new Swiper();
-let categoryTrigger = new CategoryTrigger();
 let like = new Like();
 let jarallax = new JarallaxJs();
 let fullscreenSlider = new FullscreenSlider();
