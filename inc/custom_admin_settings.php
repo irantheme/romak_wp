@@ -171,53 +171,13 @@ if (!class_exists('Irantheme_WordPress_Custom_Admin_Settings')) {
 				'description'			=> __('تنظیمات عمومی سایت', $this->textdomain),
 				'fields'				=> array(
 					array(
-						'id' 			=> 'about_excerpt',
-						'label'			=> __('درباره سایت', $this->textdomain),
-						'description'	=> __('متن درباره سایت که در فوتر وبلاگ نمایش داده می شود.', $this->textdomain),
-						'type'			=> 'textarea',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'about_link',
-						'label'			=> __('لینک درباره ما', $this->textdomain),
-						'description'	=> __('لینک اصلی صفحه درباره ما برای ارائه ادامه مطالب در فوتر وبلاگ.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
 						'id' 			=> 'copyright',
 						'label'			=> __('متن کپی رایت', $this->textdomain),
 						'description'	=> __('متن حقوقی و معنوی سایت که در آخر سایت نمایش داده میشود.', $this->textdomain),
 						'type'			=> 'textarea',
 						'default'		=> '',
 						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'general_email',
-						'label'			=> __('ایمیل سایت', $this->textdomain),
-						'description'	=> __('ایمیل عمومی جهت ارائه به کاربران.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'general_telephone',
-						'label'			=> __('تلفن تماس', $this->textdomain),
-						'description'	=> __('شماره تماس جهت ارائه به کاربران.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
-					array(
-						'id' 			=> 'general_address',
-						'label'			=> __('آدرس', $this->textdomain),
-						'description'	=> __('آدرس جهت ارائه به کاربران.', $this->textdomain),
-						'type'			=> 'text',
-						'default'		=> '',
-						'placeholder'	=> ''
-					),
+					)
 				)
 			);
 
