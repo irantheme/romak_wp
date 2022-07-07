@@ -5,13 +5,17 @@ Mini profile
 */
 .mini-profile {
   padding-top: 3rem;
+  text-align: center;
+  max-width: 768px;
+  margin: auto;
 
   // Avatar
   .mini-profile-avatar {
     margin-bottom: 2rem;
 
     img {
-      width: 12rem;
+      width: 16rem;
+      max-width: 100%;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -29,12 +33,14 @@ Mini profile
   .mini-profile-description {
     color: $color-gray-700;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 2;
+    margin-bottom: 1rem;
   }
 
   .social-media-footer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1rem;
 
     li {
